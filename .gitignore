@@ -9,6 +9,7 @@ __pycache__/
 migrations/
 .idea/
 
+
 # Distribution / packaging
 .Python
 build/
