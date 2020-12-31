@@ -1,0 +1,215 @@
+.banner {
+    position: relative;
+    width: 100%;
+	height: 500px;
+	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+}
+
+.banner-text {
+    width: 70%;
+    position: absolute;
+    top: 50%;
+	left: 7%;
+}
+
+.banner-text h1 {
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 78px;
+}
+
+.banner-text h3 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#description p {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+#description {
+    position: relative;
+    margin-top: 5rem;
+    margin-left: 7%;
+    margin-right: 30%;
+}
+
+@media only screen and (min-width: 426px) {
+    #big-image img.img-fluid {
+        height: 300px;
+    }
+
+    p iframe {
+        margin-left: 0;
+        margin-right: 37%;
+        width: 99%;
+        height: 300px;
+    }
+
+    #description {
+        margin-right: 35%;
+    }
+
+    .container#images {
+        padding-right: 35% !important;
+    }
+
+    .container {
+        margin-left: 3%;
+    }
+}
+
+@media only screen and (min-width: 2560px) {
+    #big-image img.img-fluid {
+        height: 5rem;
+    }
+
+    div .col-3 .img-fluid {
+       height: 2rem;
+    }
+
+    p iframe {
+        margin-left: 0;
+        margin-right: 37%;
+        width: 99%;
+        height: 700px;
+    }
+
+    #description {
+        margin-right: 40%;
+    }
+
+    .container {
+        margin-left: 3%;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .banner {
+        position: relative;
+        width: 100%;
+        height: 223px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #description {
+        margin-top: 27rem;
+        margin-left: 3.5%;
+        margin-right: 3.5%;
+    }
+
+    p iframe {
+        margin-left: 3.5%;
+        margin-right: 3.5%;
+        width: 93%;
+        height: 156px;
+    }
+
+    .container#images {
+        width: 100%;
+        padding-right: 3.5% !important;
+    }
+
+    #big-image img.img-fluid {
+        height: 156px;
+    }
+
+    h3.mobile, div.row.text-center.text-lg-left.mobile {
+        display: flex;
+    }
+
+    h3.desktop, div.desktop, div#card-desktop {
+        display: none;
+    }
+
+    .banner-text h1 {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 25px;
+    }
+
+    .col-6 .img-fluid {
+        padding-left: 0;
+        height: 103px;
+    }
+}
+
+h3.mobile, div.mobile, #card-mobile {
+    display: none;
+}
+
+#images {
+    padding-right: 30% !important;
+    padding-left: 4% !important;
+}
+
+#description h1, #images h1 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 51px;
+}
+
+#description h2 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+#big-image .img-fluid {
+    height: 350px;
+}
+
+.col-3 .img-fluid {
+    height: 100px;
+}
+
+.img-fluid {
+    border-radius: .30rem;
+}
+
+#more, #more-mobile {
+position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    clear: both;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+}
+
+.container#images .row.text-center.text-lg-left .col-3, .container#images .row.text-center.text-lg-left .col-6 {
+    display: none;
+}
+
+body {
+    background-image: url("/static/images/background.png");
+}
+
+footer#footer {
+    margin-top: 160px;
+}

@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shop</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <style>
+          @font-face {
+            font-family: "IcoFont";
+            src: local("IcoFont"), url('{% static "fonts/icofont.woff" %}');
+          }
+        </style>
+</head>
+<body style="background-color: #f6f6f2">
+    {% block header %} {% include 'components/header.html' %} {% endblock %}
+
+    <div>{% block content %} {% endblock %}</div>
+
+    {% block footer %} {% include 'components/footer.html' %} {% endblock %}
+</body>
+</html>

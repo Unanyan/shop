@@ -1,0 +1,71 @@
+{% extends 'base.html' %}{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/product_detail.css' %}"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{% static 'js/product_detail.js' %}"></script>
+<div class="banner" style="background-image: url('{{ product.get_default_image }}');">
+    <div class="banner-text">
+        <h3 class="mobile">#{{ product.type }}</h3><br>
+        <h3 class="desktop">#{{ product.type }}</h3><br>
+        <h1>{{ product.name }}</h1><br>
+    </div>
+</div>
+
+
+<div id="description">
+    <h1>{{ product.name }}</h1>
+    <div> {{ product.content|safe }}</div>
+</div>
+
+
+<!-- Gallery class="font-weight-light text-center text-lg-left mt-4 mb-0"-->
+{% if product.get_default_image %}
+<div class="container" id="images"><br>
+    <h1 >Images</h1>
+    <hr class="mt-2 mb-5">
+
+    <div>
+        <a id="big-image" href="#" class="d-block mb-4">
+            <img width="100%" src="{{ product.get_default_image }}" class="img-fluid" alt="">
+        </a>
+    </div>
+
+    <div class="row text-center text-lg-left desktop">
+        {% for img in product.get_images %}
+        <div class="col-3">
+            <div href="#" class="d-block mb-4 h-100">
+                <img width="100%" class="img-fluid" src="{{ img.image.url }}" alt="l">
+                {% if forloop.counter == 4 %}
+                <div id="more">Show more</div>
+                <script>
+                    var moreImagesCount = "{{ product.get_images_count|safe }}" - 4;
+                    document.getElementById('more').innerHTML = "+" + moreImagesCount + " photo";
+                </script>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="row text-center text-lg-left mobile">
+        {% for img in product.get_images %}
+        <div class="col-6">
+            <div href="#" class="d-block mb-4 h-100">
+                <img width="100%" class="img-fluid" src="{{ img.image.url }}" alt="l">
+                {% if forloop.counter == 2 %}
+                <div id="more-mobile">Show more</div>
+                <script>
+                    var moreImagesCount = "{{ product.get_images_count|safe }}" - 2;
+                    document.getElementById('more-mobile').innerHTML = "+" + moreImagesCount + " photo";
+                </script>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+.img-fluid {
+    height: 25rem;
+}
+
+.card-columns .card {
+    margin: 1rem 1rem 1rem 1rem;
+}
+
+.btn.btn-primary {
+    border-color: #0EACA8;
+    background-color: #0EACA8;
+}
+
+a.btn.btn-primary:active {
+    borer-color: #0EACA8;
+    background-color: #0EACA8;
+}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}"/>
+
+<div>
+    <div class="banner mt-4" style="background-image: url({% static '/images/banner.png' %});">
+        <div class="banner-text">
+            <h1>About us</h1><br>
+            <h6>about_us.0.banner_description</h6><br>
+        </div>
+    </div>
+    <div class="container about-container">
+        <div id="what-we-do" class="static-section">
+            <h1>What we do</h1>
+            <p>about_us.0.what_we_do|safe</p>
+        </div>
+        <div id="our-team" class="static-section">
+            <h1>Our team</h1>
+            <p>about_us.0.our_team|safe</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

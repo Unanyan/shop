@@ -7,7 +7,10 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("product.urls")),
+    path('', include("resources.urls")),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('en/', include('django.conf.urls.i18n')),
+    path('', include('django.conf.urls.i18n')),
 ]
 
 if settings.DEBUG:

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/product.css' %}"/>
+
+<div class="card-columns">
+    {% for product in products %}
+    <div class="card">
+        <img src="{{ product.get_default_image }}" class="card-img-top img-fluid" alt="...">
+
+        <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <a href="{% url 'product:detail' product.pk %}" class="btn btn-primary">See more</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
