@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'resources',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -223,3 +224,13 @@ PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
 LOCALE_PATHS = (
     os.path.join(PROJECT_PATH, '../locale'),
 )
+
+EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '465'
+EMAIL_HOST_USER = 'presents.shop.vanadzor@gmail.com'
+EMAIL_HOST_PASSWORD = 'presentsshopvanadzor'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'

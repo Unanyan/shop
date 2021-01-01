@@ -1,0 +1,7 @@
+#message {
+	position: absolute;
+	top: 100px;
+	right: calc(50% - 160px);
+	z-index:100;
+	background-color: #d4edda;
+}

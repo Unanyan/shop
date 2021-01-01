@@ -45,6 +45,13 @@
 }
 
 @media only screen and (min-width: 426px) {
+    div.card {
+        width: 33%;
+        position: fixed;
+        left: 65%;
+        bottom: 29%;
+    }
+
     #big-image img.img-fluid {
         height: 300px;
     }
@@ -70,6 +77,13 @@
 }
 
 @media only screen and (min-width: 2560px) {
+    div.card {
+        position: fixed;
+        width: 500px;
+        left: 70%;
+        bottom: 20%;
+    }
+
     #big-image img.img-fluid {
         height: 5rem;
     }
@@ -104,6 +118,13 @@
         background-size: cover;
     }
 
+    div.card {
+        width: 93%;
+        left: 3.5%;
+        position: absolute;
+        top: 85%;
+    }
+
     #description {
         margin-top: 27rem;
         margin-left: 3.5%;
@@ -130,6 +151,10 @@
         display: flex;
     }
 
+    div#card-mobile {
+        display: block;
+    }
+
     h3.desktop, div.desktop, div#card-desktop {
         display: none;
     }
@@ -151,6 +176,10 @@
 
 h3.mobile, div.mobile, #card-mobile {
     display: none;
+}
+
+#card-desktop {
+    display: block;
 }
 
 #images {
@@ -204,6 +233,10 @@ position: absolute;
 
 .container#images .row.text-center.text-lg-left .col-3, .container#images .row.text-center.text-lg-left .col-6 {
     display: none;
+}
+
+div.card {
+    z-index: 999;
 }
 
 body {

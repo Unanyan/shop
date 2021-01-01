@@ -9,6 +9,8 @@ django-ckeditor = "*"
 psycopg2 = "*"
 pillow = "*"
 django-modeltranslation = "*"
+django-messages = "*"
+django-smtp-ssl = "*"
 
 [dev-packages]
 

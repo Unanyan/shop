@@ -21,6 +21,18 @@
         </style>
 </head>
 <body style="background-color: #f6f6f2">
+    {% if messages %}
+        <div id="message"  class="toast alert alert-success show" role="alert" aria-live="polite" aria-atomic="true" data-delay="5000">
+            <div class="toast-body">
+                {% for message in messages %}
+                <div>{{ message }}</div>
+                {% endfor %}
+            </div>
+        </div>
+        <script>
+            $('#message').toast('show')
+        </script>
+    {% endif %}
     {% block header %} {% include 'components/header.html' %} {% endblock %}
 
     <div>{% block content %} {% endblock %}</div>

@@ -1,0 +1,21 @@
+from modeltranslation.translator import register, TranslationOptions
+
+from .models import AboutUs, Contact, Rule
+
+
+@register(AboutUs)
+class AboutUsTranslationOptions(TranslationOptions):
+    fields = ('title', 'banner_description', 'what_we_do', 'our_team')
+    required_languages = ('en', 'hy')
+
+
+@register(Contact)
+class ContactTranslationOptions(TranslationOptions):
+    fields = ('address',)
+    required_languages = ('en', 'hy')
+
+
+@register(Rule)
+class RuleTranslationOptions(TranslationOptions):
+    fields = ('title', 'subtitle', 'content')
+    required_languages = ('en', 'hy')

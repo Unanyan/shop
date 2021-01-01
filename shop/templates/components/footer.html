@@ -1,4 +1,60 @@
 {% load static %}
+{% load i18n %}
+{% get_current_language as language_code %}
+{% get_available_languages as languages %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}" />
+
 <footer id="footer">
-    footer
+    <div class="container mail d-flex flex-column align-items-center">
+        <h2 class="title">{% trans "Subscribe To Newsletter" %}</h2>
+        <span class="text">{% trans "Please enter your email address and get updates" %}</span>
+        <form class="form" action="{% url 'users:subscribe' %}" method="post">
+            {% csrf_token %}
+            <div class="input-group mb-3">
+                <label for="email"></label>
+                <input id="email" type="email" placeholder="Email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <button class="btn-send" type="submit">{% trans "Send" %}</button>
+            </div>
+        </form>
+    </div>
+    <div class="container main">
+        <div class="box logo">
+            <img class="icon" src="{% static 'images/logo.png' %}" alt="icon">
+        </div>
+        <div class="box">
+            <h4 class="box_title">{% trans "Contact information" %}</h4>
+            <div class="link">
+                <img class="mr-1" src="{% static 'images/mail.png' %}" alt="mail">{{contact.0.email}}
+            </div>
+            <div class="link">
+                <img class="mr-1" src="{% static 'images/mobile.png' %}" alt="phone">{{contact.0.phone}}
+            </div>
+            <div class="link">
+                <img class="mr-2" src="{% static 'images/location.png' %}" alt="location">{{contact.0.address}}
+            </div>
+        </div>
+        <div class="box">
+            <h4 class="box_title">{% trans "Useful links" %}</h4>
+            <a class="link" href="{% url "resources:terms" %}">{% trans "Terms and Conditions" %}</a>
+            <a class="link" href="">Contact Us</a>
+            <a class="link" href="">FAQ</a>
+            <a class="link" href="{% url "resources:privacy" %}">{% trans "Privacy and Policy" %}</a>
+        </div>
+         <div class="box logo_mobile">
+            <img class="icon" src="{% static 'images/logo.png' %}" alt="icon">
+        </div>
+    </div>
+
+    <div class="container d-flex flex-column bottom-box">
+        <div class="line"></div>
+        <div class="copyright-box d-flex justify-content-between">
+            <span class="left">{% trans "© 2020 Present, inc. All rights reserved" %}</span>
+            <span class="icon-box">
+                <img src="{% static 'images/Group (1).png' %}" alt="">
+                <img src="{% static 'images/Group (2).png' %}" alt="">
+                <img src="{% static 'images/Group.png' %}" alt="">
+                <img src="{% static 'images/iconmonstr-linkedin-2 1.png' %}" alt="">
+            </span>
+        </div>
+    </div>
 </footer>

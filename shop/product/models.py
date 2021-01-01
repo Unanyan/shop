@@ -1,5 +1,10 @@
 from ckeditor.fields import RichTextField
+from django.core.mail import send_mail
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+from users.models import Subscriber
 
 
 class Product(models.Model):
@@ -53,3 +58,17 @@ class Gallery(models.Model):
 
     def __str__(self):
         return self.product.name
+
+
+@receiver(post_save, sender=Product)
+def send_email(sender, instance, **kwargs):
+    if kwargs['created']:
+        message = ('We are created new product!\n\n  The new product name is: ' +
+                   instance.name + ',\n  Description is: ' + instance.description + '.')
+        subject, from_email = 'New Post', 'presents.shop.vanadzor@gmail.com'
+
+        print("Sending notifications this emails from subscribers: ")
+
+        for subscriber in Subscriber.objects.all():
+            print(subscriber.mail)
+            send_mail(subject, message, from_email, [subscriber.mail])
