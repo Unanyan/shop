@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.template import loader
 
-from .models import Contact, Rule, AboutUs
+from .models import Contact, Rule, AboutUs, Terms
 
 
 def about(request):
@@ -16,11 +16,13 @@ def about(request):
 
 def privacy_and_policy(request):
     contact = Contact.objects.all()
-    rule = get_object_or_404(Rule, title_en__icontains='privacy')
+    rule = Rule.objects.all()
 
     return render(request, 'resources/rules.html', {'contact': contact, 'rule': rule})
 
 
 def terms_and_conditions(request):
     contact = Contact.objects.all()
-    rule = get_object_or_404(Rule, title_en__icontains='term')
+    terms = Terms.objects.all()
+
+    return render(request, 'resources/terms.html', {'contact': contact, 'terms': terms})

@@ -21,7 +21,14 @@ class AboutUs(models.Model):
 
 class Rule(models.Model):
     title = models.CharField(max_length=50)
-    subtitle = models.CharField(max_length=255)
+    content = RichTextField(null=False)
+
+    def __str__(self):
+        return self.title
+
+
+class Terms(models.Model):
+    title = models.CharField(max_length=50)
     content = RichTextField(null=False)
 
     def __str__(self):

@@ -1,7 +1,7 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
 
-from .models import AboutUs, Contact, Rule
+from .models import AboutUs, Contact, Rule, Terms
 
 
 @admin.register(AboutUs)
@@ -24,6 +24,18 @@ class ContactAdmin(TranslationAdmin):
 
 @admin.register(Rule)
 class PrivacyAdmin(TranslationAdmin):
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+    def has_add_permission(self, request):
+        if self.model.objects.count() >= 2:
+            return False
+        return super().has_add_permission(request)
+
+
+@admin.register(Terms)
+class TermsAdmin(TranslationAdmin):
 
     def has_delete_permission(self, request, obj=None):
         return False

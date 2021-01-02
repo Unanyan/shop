@@ -48,9 +48,19 @@ class Cart(object):
             self.cart[product_id] = {'quantity': 0,
                                       'price': str(product.price)}
         if update_quantity:
-            self.cart[product_id]['quantity'] = quantity
+            if product.count < quantity:
+                self.cart[product_id]['quantity'] = product.count
+            else:
+                self.cart[product_id]['quantity'] = quantity
         else:
-            self.cart[product_id]['quantity'] += quantity
+            count = self.cart[product_id]['quantity'] + quantity
+            if (product.count < count) or (count > 100):
+                if product.count > 100:
+                    self.cart[product_id]['quantity'] = 100
+                else:
+                    self.cart[product_id]['quantity'] = product.count
+            else:
+                self.cart[product_id]['quantity'] += quantity
         self.save()
 
     def save(self):

@@ -38,10 +38,12 @@
                     {% with total_items=cart|length %}
                     {% if cart|length > 0 %}
                     <a class="nav-link {% if url_name == 'cart_detail' %}active{% endif %}" href="{% url 'cart:cart_detail' %}">
-                        <img width="35px" height="35px" src="{% static 'images/cart5.webp' %}"> {{ total_items }} items ${{ cart.get_total_price }}
+                        <img width="35px" height="35px" src="{% static 'images/cart5.webp' %}"> {{ total_items }} items ֏ {{ cart.get_total_price }}
                     </a>
                     {% else %}
-                    Empty cart
+                    <a class="nav-link {% if url_name == 'cart_detail' %}active{% endif %}" href="{% url 'cart:cart_detail' %}">
+                        <img width="35px" height="35px" src="{% static 'images/cart5.webp' %}"> Is empty
+                    </a>
                     {% endif %}
                     {% endwith %}
         </div>

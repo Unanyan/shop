@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% load i18n %}
+{% get_current_language as language_code %}
+{% get_available_languages as languages %}
+
+<link href="{% static 'css/rules.css' %}" rel="stylesheet" type="text/css"/>
+
+{% for rul in rule %}
+<div class="container rules">
+    <span class="title">{{ rul.title }}</span>
+    <div class="content">
+        {{ rul.content|safe }}
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

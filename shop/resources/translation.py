@@ -1,6 +1,6 @@
 from modeltranslation.translator import register, TranslationOptions
 
-from .models import AboutUs, Contact, Rule
+from .models import AboutUs, Contact, Rule, Terms
 
 
 @register(AboutUs)
@@ -17,5 +17,11 @@ class ContactTranslationOptions(TranslationOptions):
 
 @register(Rule)
 class RuleTranslationOptions(TranslationOptions):
-    fields = ('title', 'subtitle', 'content')
+    fields = ('title', 'content')
+    required_languages = ('en', 'hy')
+
+
+@register(Terms)
+class RuleTranslationOptions(TranslationOptions):
+    fields = ('title', 'content')
     required_languages = ('en', 'hy')

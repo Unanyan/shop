@@ -13,11 +13,12 @@
         <p class="card-text">{{ product.description }}</p>
     </div>
     <form action="{% url 'cart:cart_add' product_id=product.id %}" method="post">
-        {{ cart_product_form }}
+
         {% csrf_token %}
         <div>
-            <label for="count"></label>
-            <input class="form-control" id="count" type="number" onfocus="this.placeholder = ''"placeholder="Quantity" name="count" max="100" min="1">
+                {{ cart_product_form }}
+<!--            <label for="count"></label>-->
+<!--            <input class="form-control" id="count" type="number" onfocus="this.placeholder = ''"placeholder="Quantity" name="count" max="100" min="1">-->
             <button class="btn btn-primary btn-custom" type="submit">{% trans "ADD TO CART" %}</button>
         </div>
     </form>
