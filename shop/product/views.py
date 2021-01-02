@@ -6,6 +6,8 @@ from product.models import Product
 
 from resources.models import Contact
 
+from cart.forms import CartAddProductForm
+
 
 def index(request):
     products = get_list_or_404(Product)
@@ -75,4 +77,5 @@ def detail(request, id):
     product = get_object_or_404(Product, pk=id)
     template = loader.get_template('product/detail.html')
     contact = Contact.objects.all()
-    return HttpResponse(template.render({'product': product, 'contact': contact}, request))
+    cart_product_form = CartAddProductForm()
+    return HttpResponse(template.render({'product': product, 'contact': contact, 'cart_product_form': cart_product_form}, request))

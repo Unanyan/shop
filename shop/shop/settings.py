@@ -8,6 +8,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(
     os.path.abspath(__file__)))
 TEMPLATES_DIR = [os.path.join(BASE_DIR, 'templates')]
 
+# cart
+CART_SESSION_ID = 'cart'
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -30,6 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cart.apps.CartConfig',
     'product',
     'ckeditor',
     'ckeditor_uploader',
@@ -60,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'cart.context_processors.cart',
             ],
         },
     },

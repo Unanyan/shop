@@ -31,11 +31,19 @@
                 <li class="nav-item">
                     <a class="nav-link {% if url_name == 'about' %}active{% endif %}" href="{% url 'resources:about' %}">About us</a>
                 </li>
+<!--                <li class="nav-item">-->
+
+<!--                </li>-->
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+                    {% with total_items=cart|length %}
+                    {% if cart|length > 0 %}
+                    <a class="nav-link {% if url_name == 'cart_detail' %}active{% endif %}" href="{% url 'cart:cart_detail' %}">
+                        <img width="35px" height="35px" src="{% static 'images/cart5.webp' %}"> {{ total_items }} items ${{ cart.get_total_price }}
+                    </a>
+                    {% else %}
+                    Empty cart
+                    {% endif %}
+                    {% endwith %}
         </div>
     </nav>
     {% endwith %}

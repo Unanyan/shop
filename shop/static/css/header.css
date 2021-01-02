@@ -3,13 +3,17 @@
     src: url('fontes/icoFont.woff');
 }
 
-.navbar-light .navbar-nav .nav-link.active {
+.navbar-light .navbar-nav a.nav-link.active {
     color: #0EACA8;
     border-bottom: 2px solid #0EACA8;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
     color: #0EACA8;
+}
+
+a.nav-link {
+    color: rgba(0,0,0,.5)
 }
 
 button.btn.btn-outline-success, button.btn.btn-outline-success:focus {

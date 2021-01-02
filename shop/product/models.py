@@ -3,6 +3,7 @@ from django.core.mail import send_mail
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.urls import reverse
 
 from users.models import Subscriber
 
@@ -44,6 +45,9 @@ class Product(models.Model):
 
     def get_images_count(self):
         return self.get_images().count()
+
+    def get_absolute_url(self):
+        return reverse('product:detail', args=[str(self.id)])
 
 
 class Gallery(models.Model):

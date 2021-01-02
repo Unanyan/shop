@@ -9,6 +9,7 @@ urlpatterns = [
     path('', include("product.urls")),
     path('', include("resources.urls")),
     path('', include("users.urls")),
+    path('cart/', include("cart.urls")),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('en/', include('django.conf.urls.i18n')),
     path('', include('django.conf.urls.i18n')),

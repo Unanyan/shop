@@ -12,7 +12,8 @@
     <div>
         <p class="card-text">{{ product.description }}</p>
     </div>
-    <form action="{% url 'users:subscribe' %}" method="get">
+    <form action="{% url 'cart:cart_add' product_id=product.id %}" method="post">
+        {{ cart_product_form }}
         {% csrf_token %}
         <div>
             <label for="count"></label>
