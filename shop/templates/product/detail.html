@@ -5,19 +5,19 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/product_detail.css' %}"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="{% static 'js/product_detail.js' %}"></script>
-<div class="banner" style="background-image: url('{{ product.get_default_image }}');">
-    <div class="banner-text">
-        <h3 class="mobile">#{{ product.type }}</h3><br>
-        <h3 class="desktop">#{{ product.type }}</h3><br>
-        <h1>{{ product.name }}</h1><br>
-    </div>
+<!--<div class="banner" style="background-image: url('{{ product.get_default_image }}');">-->
+<!--    <div class="banner-text">-->
+<!--        <h3 class="mobile">#{{ product.type }}</h3><br>-->
+<!--        <h3 class="desktop">#{{ product.type }}</h3><br>-->
+<!--        <h1>{{ product.name }}</h1><br>-->
+<!--    </div>-->
     <div id="card-desktop">
         {% include 'components/cart.html' with from_details=True %}
     </div>
     <div id="card-mobile">
         {% include 'components/cart.html' with from_details=True %}
     </div>
-</div>
+<!--</div>-->
 
 
 <div id="description">

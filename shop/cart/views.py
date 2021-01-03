@@ -21,7 +21,7 @@ def cart_add(request, product_id):
     form = CartAddProductForm(request.POST)
     if form.is_valid():
         cd = form.cleaned_data
-        # print(cd['quantity'])
+        print('cd: ', cd['quantity'])
         cart.add(product=product,
                  quantity=cd['quantity'],
                  update_quantity=cd['update'])
@@ -42,7 +42,7 @@ def cart_detail(request):
                                                                    'update': True})
     template = loader.get_template('cart/detail.html')
     contact = Contact.objects.all()
-    print(request.session['cart'])
+    print('cart: ', request.session['cart'])
     return HttpResponse(template.render({'cart': cart, 'contact': contact}, request))
     # return render(request, 'cart/detail.html', {'cart': cart})
 

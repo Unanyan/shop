@@ -2,10 +2,6 @@ body {
     background-image: url("/static/images/background.png");
 }
 
-footer {
-    margin-top: 520px;
-}
-
 .banner {
     position: relative;
     width: 100%;
@@ -28,7 +24,7 @@ footer {
     font-weight: 600;
     font-size: 64px;
     line-height: 78px;
-    color: #FFFFFF;
+    color: #0ca6a1;
 }
 
 .banner-text h6 {
@@ -37,7 +33,7 @@ footer {
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
-    color: #FFFFFF;
+    color: #0ca6a1;
 }
 
 .about-container {
@@ -48,7 +44,7 @@ footer {
 #what-we-do {
     position: relative;
     align-items: center;
-    border-top: 3px solid #0EACA8;
+    border-top: 3.5px solid #0ca6a1;
     background: #FFFFFF;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
@@ -57,7 +53,7 @@ footer {
 #our-team {
     position: relative;
     align-items: center;
-    border-top: 3px solid #0EACA8;
+    border-top: 3.5px solid #0ca6a1;
     background: #FFFFFF;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15);
     border-radius: 5px;

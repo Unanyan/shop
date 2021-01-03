@@ -12,7 +12,7 @@
             {% csrf_token %}
             <div class="input-group mb-3">
                 <label for="email"></label>
-                <input id="email" type="email" placeholder="Email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <input id="email" type="email" placeholder="Please input your email hear ..." onfocus="this.placeholder = ''" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                 <button class="btn-send" type="submit">{% trans "Send" %}</button>
             </div>
         </form>
@@ -49,12 +49,6 @@
         <div class="line"></div>
         <div class="copyright-box d-flex justify-content-between">
             <span class="left">{% trans "© 2020 Present, inc. All rights reserved" %}</span>
-            <span class="icon-box">
-                <img src="{% static 'images/Group (1).png' %}" alt="">
-                <img src="{% static 'images/Group (2).png' %}" alt="">
-                <img src="{% static 'images/Group.png' %}" alt="">
-                <img src="{% static 'images/iconmonstr-linkedin-2 1.png' %}" alt="">
-            </span>
         </div>
     </div>
 </footer>
