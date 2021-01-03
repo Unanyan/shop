@@ -7,6 +7,8 @@ from .cart import Cart as CartSession
 from .forms import CartAddProductForm
 from resources.models import Contact
 
+from django.contrib import messages
+
 from users.models import Customer
 
 from .models import CartItem, Cart
@@ -80,24 +82,26 @@ def checkout(request):
 
         cart_session = CartSession(request)
 
-
-        from django.forms.models import model_to_dict
-
-        # data = self.get_queryset()
-
         for item in cart_session:
             cart_item = CartItem()
             print('item', item)
-            # item['product'] = model_to_dict(item['product'])
-            # cart_item.product = get_object_or_404(Product, id=item['product']['id'])
-            cart_item.product = item['product']
+
+            from django.forms.models import model_to_dict
+
+            item['product'] = model_to_dict(item['product'])
+            print('product: ', item['product'])
+            cart_item.product = get_object_or_404(Product, id=item['product']['id'])
+
+            # cart_item.product = item['product']
             cart_item.quantity = item['quantity']
             cart_item.save()
             cart = Cart()
             cart.user = customer
             cart.cart_item = cart_item
             cart.save()
+        messages.success(request, 'Thank you, your order has been successfully accepted!')
         return HttpResponseRedirect('/')
     else:
+        messages.success(request, 'Please fill in all the fields!')
         contact = Contact.objects.all()
         return render(request, 'cart/checkout.html', {'contact': contact,})

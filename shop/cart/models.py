@@ -13,7 +13,7 @@ class CartItem(models.Model):
     added_date = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return self.product.__str__()
+        return self.product.__str__() + ': ' + self.quantity.__str__()
 
 
 class Cart(models.Model):
@@ -23,6 +23,7 @@ class Cart(models.Model):
     cart_item = models.ForeignKey(
         CartItem, related_name='cart_item', on_delete=models.CASCADE
     )
+    is_shipped = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.user.__str__()
+        return self.user.__str__() + self.cart_item.__str__()

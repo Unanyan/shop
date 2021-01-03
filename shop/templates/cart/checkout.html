@@ -12,13 +12,13 @@
             <form action="{% url 'cart:checkout' %}" method="post">
                 {% csrf_token %}
                 <label for="name"></label><br>
-                <input type="text" id="name" name="name" placeholder=" Username"  minlength="3" maxlength="20" required><br>
+                <input type="text" id="name" name="name" placeholder=" Username"  minlength="3" maxlength="45" required><br>
                 <label for="email"></label><br>
-                <input type="email" id="email" name="email" placeholder=" Email" required><br><br>
+                <input type="email" id="email" name="email" placeholder=" Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required><br><br>
                 <label for="address"></label><br>
-                <input type="text" id="address" name="address" placeholder=" Address" required><br><br>
+                <input type="text" id="address" name="address" placeholder=" Address" maxlength="45" required><br><br>
                 <label for="phone"></label><br>
-                <input type="tel" id="phone" name="phone" placeholder=" Phone" pattern="[0]{1}-[0-9]{8}" required><br><br>
+                <input type="tel" id="phone" name="phone" placeholder=" Phone" pattern="[0-9]{9}" required><br><br>
                 <div class="row">
                     <div class="col">
                     </div>
