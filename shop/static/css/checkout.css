@@ -2,20 +2,15 @@
     color: black;
 }
 
-#sign-in.row {
-    margin-right: 0;
-    margin-left: 0;
-}
-
 #form {
     width: 66%;
     padding-left: 25%;
     background-image: url("/static/images/background.png");
 }
 
-#form > div {
+/*#form > div {
     width: 70%;
-}
+}*/
 
 #form h1 {
     padding-top: 100px;
@@ -79,11 +74,16 @@ input {
         display: none;
     }
 
-    #sign-in {
-        padding-left: 15%;
+    #form {
+        width: 75%;
+        padding-left: 5rem;
     }
 
-    #form {
-        width: 120%;
+    #form h1 {
+        padding-top: 3rem;
+    }
+
+    #message {
+        right: calc(50% - 110px);
     }
 }

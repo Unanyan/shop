@@ -36,9 +36,9 @@ table {
 }
 
 table th, table td {
-    text-align:left;
+    text-align: center;
     font-size:14px;
-    padding:10px;
+    padding:0px;
     margin:0;
 }
 
@@ -61,12 +61,13 @@ table.cart {
 }
 
 table.cart img {
-    width:180px;
+    width: 11rem;
+    height: 13rem;
 }
 
-tbody td.num {
+/*tbody td.num {
     text-align:right;
-}
+}*/
 
 td input[type="submit"] {
     font-size:12px;
@@ -113,7 +114,7 @@ form div.field {
     padding:6px 12px;
     border:0;
     background:#efefef;
-    color:#666;
+    color:#667;
     border-radius:4px;
 }
 
@@ -122,5 +123,27 @@ form div.field {
     display: inline;
     width: 45%;
     height: calc(1.1em + .75rem + 2px);
+}
+
+@media only screen and (max-width: 768px) {
+    .name, .total {
+        display: none;
+    }
+
+    table.cart img {
+        width: 3rem;
+        height: 4rem;
+    }
+
+    .form-control {
+        display: block;
+        width: 100%;
+        height: calc(1.1em + .75rem + 2px);
+    }
+}
+
+input#quantity {
+    color: #0ca6a1;
+	text-align: center;
 }
 

@@ -5,12 +5,12 @@
     <thead>
     <tr>
         <th>Image</th>
-        <th>Name</th>
+        <th class="name">Name</th>
         <th>Update</th>
         <th>Delete</th>
         <th>Quantity</th>
         <th>Price</th>
-        <th>Total</th>
+        <th class="total">Total</th>
     </tr>
     </thead>
     <tbody>
@@ -23,7 +23,7 @@
                         src="{% if product.get_default_image %}{{ product.get_default_image }}{% else %}{% static 'img/no_image.png' %}{% endif %}">
                 </a>
             </td>
-            <td>{{ product.name }}</td>
+            <td class="name">{{ product.name }}</td>
             <td>
                 <form action="{% url 'cart:cart_add' product.id %}" method="post">
                     {{ item.update_quantity_form.quantity }}
@@ -37,7 +37,7 @@
                 {{ item.quantity }}
             </td>
             <td class="num">֏ {{ item.price }}</td>
-            <td class="num">֏ {{ item.total_price }}</td>
+            <td class="num total">֏ {{ item.total_price }}</td>
         </tr>
         {% endwith %}
         {% endfor %}
