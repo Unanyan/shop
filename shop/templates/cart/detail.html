@@ -50,6 +50,6 @@
 </table>
 <p class="text-right">
     <a href="{% url 'product:index' %}" class="button light">To the store</a>
-    <a href="#" class="button">Checkout</a>
+    <a href="{% url 'cart:checkout' %}" class="button">Checkout</a>
 </p>
 {% endblock %}

@@ -1,0 +1,89 @@
+#sign-in {
+    color: black;
+}
+
+#sign-in.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+#form {
+    width: 66%;
+    padding-left: 25%;
+    background-image: url("/static/images/background.png");
+}
+
+#form > div {
+    width: 70%;
+}
+
+#form h1 {
+    padding-top: 100px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 51px;
+    color: rgba(51, 51, 51, 0.9);
+}
+
+#form h6 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(51, 51, 51, 0.7);
+}
+
+input {
+    width: 100%;
+    height: 56px;
+    background: #FFFFFF;
+    border: 1px solid rgba(45, 48, 53, 0.2);
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+#form a {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-decoration-line: underline;
+    color: rgba(14, 172, 168, 0.8);
+}
+
+#submit {
+    position: absolute;
+    right: 15px;
+    color: white;
+    width: 125px;
+    height: 44px;
+    background: linear-gradient(270deg, #00928A 0%, #0EACA8 100%);
+    box-shadow: 0px 1px 6px rgba(51, 51, 51, 0.2);
+    border-radius: 4px;
+}
+
+#register-link {
+    padding-top: 150px;
+}
+
+.desktop {
+    display: block;
+}
+
+@media only screen and (max-width: 425px) {
+    .desktop {
+        display: none;
+    }
+
+    #sign-in {
+        padding-left: 15%;
+    }
+
+    #form {
+        width: 120%;
+    }
+}
