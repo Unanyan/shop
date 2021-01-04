@@ -46,9 +46,9 @@
 
 @media only screen and (min-width: 426px) {
     div.card {
-        width: 33%;
+        width: 31%;
         position: fixed;
-        left: 65%;
+        left: 67%;
         bottom: 23%;
     }
 
@@ -190,6 +190,8 @@ h3.mobile, div.mobile, #card-mobile {
 }
 
 #description h1, #images h1 {
+    color: #0EACA8;
+    /*border-bottom: 0.5px solid #0ca6a1;*/
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;

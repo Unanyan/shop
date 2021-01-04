@@ -3,7 +3,7 @@ $(document).ready(function () {
     var items = 100;
     $('#more').click(function () {
         shown = $('.row .col-3:visible').length+4;
-        $('.row .col-3:lt('+items+')').show(500);
+        $('.row .col-3:lt('+items+')').show(350);
         $('#more').hide();
     });
 });

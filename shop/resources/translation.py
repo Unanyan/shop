@@ -5,7 +5,7 @@ from .models import AboutUs, Contact, Rule, Terms
 
 @register(AboutUs)
 class AboutUsTranslationOptions(TranslationOptions):
-    fields = ('title', 'banner_description', 'what_we_do', 'our_team')
+    fields = ('title', 'what_we_do', 'our_team')
     required_languages = ('en', 'hy')
 
 

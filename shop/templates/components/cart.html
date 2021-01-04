@@ -5,9 +5,19 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}"/>
 
+       <script>
+           function plus() {
+               let quantity = parseInt(document.getElementById("quantity").value) + 1;
+               document.getElementById("quantity").value = quantity;
+           }
+           function minus() {
+               document.getElementById("quantity").value -= 1;
+           }
+       </script>
+
 <div class="card">
     <div class="card-header">
-       <h5 class="card-title">{{ product.name}}</h5>
+       <h5 class="card-title">{{ product.name}}</h5><span>֏ {{ product.price }}</span>
     </div>
     <div>
         <p class="card-text">{{ product.description }}</p>
@@ -16,7 +26,11 @@
 
         {% csrf_token %}
         <div>
-                {{ cart_product_form }}
+                <div id="input">
+                    <input type="button" value="-" class="btn btn-primary btn-cust" onclick="minus()"/>
+                    {{ cart_product_form }}
+                    <input type="button" value="+" class="btn btn-primary btn-cust" onclick="plus()"/>
+                </div>
 <!--            <label for="count"></label>-->
 <!--            <input class="form-control" id="count" type="number" onfocus="this.placeholder = ''"placeholder="Quantity" name="count" max="100" min="1">-->
             <button class="btn btn-primary btn-custom" type="submit">{% trans "ADD TO CART" %}</button>

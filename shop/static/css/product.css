@@ -3,10 +3,10 @@ body {
 }
 
 .img-fluid {
-    height: 25rem;
+    height: 21rem;
 }
 
-.card-columns .card {
+.card-columns .car {
     margin: 1rem 1rem 1rem 1rem;
 }
 
@@ -20,7 +20,21 @@ a.btn.btn-primary:active {
     background-color: #0ca6a1;
 }
 
-span {
+#price {
     font-size: 25px;
     color: #0ca6a1;
+}
+
+.card-body p {
+    margin-top: 1rem;
+    /*min-height: 200px;*/
+    font-size: 14px;
+}
+
+@media(min-width: 425px) {
+.card-columns {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+}
 }

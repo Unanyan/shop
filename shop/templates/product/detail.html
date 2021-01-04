@@ -19,18 +19,11 @@
     </div>
 <!--</div>-->
 
-
-<div id="description">
-    <h1>{{ product.name }}</h1>
-    <div> {{ product.content|safe }}</div>
-</div>
-
-
 <!-- Gallery class="font-weight-light text-center text-lg-left mt-4 mb-0"-->
 {% if product.get_default_image %}
 <div class="container" id="images"><br>
-    <h1 >Images</h1>
-    <hr class="mt-2 mb-5">
+<!--    <h1 >Images</h1>-->
+<!--    <hr class="mt-2 mb-5">-->
 
     <div>
         <a id="big-image" href="#" class="d-block mb-4">
@@ -74,4 +67,10 @@
 
 </div>
 {% endif %}
+
+<div id="description">
+    <h1>{{ product.name }}</h1>
+    <div> {{ product.content|safe }}</div>
+</div>
+
 {% endblock %}

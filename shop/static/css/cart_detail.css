@@ -38,8 +38,9 @@ table {
 table th, table td {
     text-align: center;
     font-size:14px;
-    padding:0px;
-    margin:0;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-top: 0px;
 }
 
 tbody tr:nth-child(odd) {
