@@ -12,7 +12,7 @@
             {% csrf_token %}
             <div class="input-group mb-3">
                 <label for="email"></label>
-                <input id="email" type="email" placeholder="Please input your email hear ..." onfocus="this.placeholder = ''" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <input id="email" type="email" placeholder="{% trans "name@example.com" %}" onfocus="this.placeholder = ''" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                 <button class="btn-send" type="submit">{% trans "Send" %}</button>
             </div>
         </form>
@@ -24,20 +24,20 @@
         <div class="box">
             <h4 class="box_title">{% trans "Contact information" %}</h4>
             <div class="link">
-                <img class="mr-1" src="{% static 'images/mail.png' %}" alt="mail">{{contact.0.email}}
+                <img width="15px" height="13px" class="mr-1" src="{% static 'images/mail.png' %}" alt="mail">{{contact.0.email}}
             </div>
             <div class="link">
-                <img class="mr-1" src="{% static 'images/mobile.png' %}" alt="phone">{{contact.0.phone}}
+                <img width="15px" height="15px" class="mr-1" src="{% static 'images/tel.png' %}" alt="phone">{{contact.0.phone}}
             </div>
             <div class="link">
-                <img class="mr-2" src="{% static 'images/location.png' %}" alt="location">{{contact.0.address}}
+                <img width="15px" height="15px" class="mr-2" src="{% static 'images/loc.png' %}" alt="location">{{contact.0.address}}
             </div>
         </div>
         <div class="box">
             <h4 class="box_title">{% trans "Useful links" %}</h4>
             <a class="link" href="{% url "resources:terms" %}">{% trans "Terms and Conditions" %}</a>
             <a class="link" href="">{% trans "Contact Us" %}</a>
-            <a class="link" href="">{% trans "FAQ" %}</a>
+            <a class="link" href="{% url 'resources:about' %}">{% trans "About us" %}</a>
             <a class="link" href="{% url "resources:privacy" %}">{% trans "Privacy and Policy" %}</a>
         </div>
          <div class="box logo_mobile">

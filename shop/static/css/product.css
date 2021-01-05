@@ -6,17 +6,18 @@ body {
     height: 21rem;
 }
 
-.card-columns .car {
+.card-columns .card {
+    border: 1px solid #0ca6a1;
     margin: 1rem 1rem 1rem 1rem;
 }
 
-.btn.btn-primary {
+.btn.btn-primary, .btn.btn-primary:focus {
     border-color: #0ca6a1;
     background-color: #0ca6a1;
 }
 
 a.btn.btn-primary:active {
-    borer-color: #0ca6a1;
+    border-color: #0ca6a1;
     background-color: #0ca6a1;
 }
 
@@ -27,11 +28,10 @@ a.btn.btn-primary:active {
 
 .card-body p {
     margin-top: 1rem;
-    /*min-height: 200px;*/
     font-size: 14px;
 }
 
-@media(min-width: 425px) {
+@media(min-width: 426px) {
 .card-columns {
     -webkit-column-count: 4;
     -moz-column-count: 4;

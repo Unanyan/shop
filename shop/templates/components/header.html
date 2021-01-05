@@ -31,21 +31,19 @@
                 <li class="nav-item">
                     <a class="nav-link {% if url_name == 'child' %}active{% endif %}" href="{% url 'product:child' %}">{% trans "For child" %}</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link {% if url_name == 'about' %}active{% endif %}" href="{% url 'resources:about' %}">{% trans "About us" %}</a>
-                </li>
 <!--                <li class="nav-item">-->
 
 <!--                </li>-->
             </ul>
                     {% with total_items=cart|length %}
                     {% if cart|length > 0 %}
-                    <a class="nav-link {% if url_name == 'cart_detail' %}active{% endif %}" href="{% url 'cart:cart_detail' %}">
-                        <img width="35px" height="35px" src="{% static 'images/cart5.webp' %}"> {{ total_items }} {% trans "items" %} ֏ {{ cart.get_total_price }}
+                    <a id="cart-nav-link" class="nav-link {% if url_name == 'cart_detail' %}active{% endif %}" href="{% url 'cart:cart_detail' %}">
+                        <img width="35px" height="35px" src="{% static 'images/cart5.webp' %}"> ֏ {{ cart.get_total_price }}
+<!--                        <img width="35px" height="35px" src="{% static 'images/cart5.webp' %}"> {{ total_items }} {% trans "items" %} ֏ {{ cart.get_total_price }}-->
                     </a>
                     {% else %}
-                    <a class="nav-link {% if url_name == 'cart_detail' %}active{% endif %}" href="{% url 'cart:cart_detail' %}">
-                        <img width="35px" height="35px" src="{% static 'images/cart5.webp' %}"> {% trans "Is empty" %}
+                    <a id="cart-nav-link" class="nav-link {% if url_name == 'cart_detail' %}active{% endif %}" href="{% url 'cart:cart_detail' %}">
+                        <img width="35px" height="35px" src="{% static 'images/cart5.webp' %}"> {% trans "֏ 0" %}
                     </a>
                     {% endif %}
                     {% endwith %}
@@ -64,7 +62,8 @@
                   <option
                     value="{{ language.code }}"
                     {% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}
-                    data-content='<img src="/static/img/flags/{{ language.code }}.png">
+                    data-content='
+                    <img src="/static/images/flags/{{ language.code }}.png">
                     <span style="display:inline-block; width:100px; padding-left: 10px; text-shadow:none">
                       {{ language.name_local }}
                       <!-- span style="color:#999;">&nbsp;[{{ language.code }}]</span -->
@@ -75,6 +74,7 @@
               {% endfor %}
             </select>
         </form>
+
 <!--    </li>-->
         </div>
     </nav>

@@ -16,6 +16,10 @@ a.nav-link {
     color: rgba(0,0,0,.5)
 }
 
+#cart-nav-link {
+    padding-left: 0px;
+}
+
 
 button.btn.btn-outline-success, button.btn.btn-outline-success:focus {
 box-shadow: none;
@@ -48,6 +52,4 @@ select {
     width: auto;
     border-color: #0ca6a1;
 }
-
-
 

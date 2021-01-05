@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-05 18:34+0400\n"
+"POT-Creation-Date: 2021-01-05 21:05+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,6 +70,10 @@ msgstr "Անուն"
 msgid "Update"
 msgstr "Փոփոխել"
 
+#: templates/cart/detail.html:14 templates/cart/detail.html:39
+msgid "Delete"
+msgstr "Չեղարկել"
+
 #: templates/cart/detail.html:15
 msgid "Quantity"
 msgstr "Քանակ"
@@ -81,10 +85,6 @@ msgstr "Արժեք"
 #: templates/cart/detail.html:17
 msgid "Total"
 msgstr "Ընդհանուր"
-
-#: templates/cart/detail.html:39
-msgid "Delete"
-msgstr "Չեղարկել"
 
 #: templates/cart/detail.html:49
 msgid "Total amount"
@@ -112,11 +112,15 @@ msgstr "Բաժանորդագրվել նորություններին"
 
 #: templates/components/footer.html:10
 msgid "Please enter your email address and get updates"
-msgstr "Էլ․ հասցե"
+msgstr "Խնդրում ենք լրացնել էլ․ հասցեն բաժանորդագրվելու համար"
+
+#: templates/components/footer.html:15
+msgid "name@example.com"
+msgstr "name@example.com"
 
 #: templates/components/footer.html:16
 msgid "Send"
-msgstr "Ուղարկել"
+msgstr "Բաժանորդագրվել"
 
 #: templates/components/footer.html:25
 msgid "Contact information"
@@ -128,7 +132,7 @@ msgstr "Օգտակար հղումներ"
 
 #: templates/components/footer.html:38
 msgid "Terms and Conditions"
-msgstr ""
+msgstr "Դրույթներ և պայմաններ"
 
 #: templates/components/footer.html:39
 msgid "Contact Us"
@@ -144,7 +148,7 @@ msgstr "Քաղաքականություն"
 
 #: templates/components/footer.html:51
 msgid "© 2020 Present, inc. All rights reserved"
-msgstr "© 2020 Present, inc. All rights reserved"
+msgstr "© 2020 Present, inc. Բոլոր իրավունքները պաշտպանված են"
 
 #: templates/components/header.html:22
 msgid "Home"

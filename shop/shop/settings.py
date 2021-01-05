@@ -112,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'hy'
 
 TIME_ZONE = 'UTC'
 
@@ -220,7 +220,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.i18n',
 )
 
-LANGUAGE_CODE = 'en'
+# LANGUAGE_CODE = 'hy'
+
 # list of activated languages
 LANGUAGES = (
     ('hy', _('Հայ')),

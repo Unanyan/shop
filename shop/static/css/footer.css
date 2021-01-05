@@ -7,6 +7,10 @@ footer {
 	margin-top: 160px;
 }
 
+a.link {
+    color: #0ca6a1;
+}
+
 .line {
 	border: 1px solid rgba(255, 255, 255, 0.2);
 	margin-bottom: 20px;
@@ -61,7 +65,7 @@ footer {
 
 .btn-send {
 	height: 38px;
-	width: 65px;
+	width: auto;
 	border-radius: 0px 4px 4px 0px;
 	font-size: 14px;
 	border: 0;
