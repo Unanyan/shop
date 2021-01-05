@@ -127,7 +127,7 @@ form div.field {
 }
 
 @media only screen and (max-width: 768px) {
-    .name, .total {
+    .name, .pr-total {
         display: none;
     }
 

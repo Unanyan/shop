@@ -1,6 +1,9 @@
 {% extends 'base.html' %}{% load static %}
-
 {% block content %}
+{% load i18n %}
+{% get_current_language as language_code %}
+{% get_available_languages as languages %}
+
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/product_detail.css' %}"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -34,10 +37,10 @@
             <div href="#" class="d-block mb-4 h-100">
                 <img width="100%" onmouseover="currentSlide({{ forloop.counter }})" onclick="currentSlide({{ forloop.counter }})" class="img-fluid demo cursor" src="{{ img.image.url }}" alt="l">
                 {% if forloop.counter == 4 %}
-                <div id="more">Show more</div>
+                <div id="more">{% trans "Show more" %}</div>
                 <script>
                     var moreImagesCount = "{{ product.get_images_count|safe }}" - 4;
-                    document.getElementById('more').innerHTML = "+" + moreImagesCount + " photo";
+                    document.getElementById('more').innerHTML = "+" + moreImagesCount + " {% trans "photo" %}";
                 </script>
                 {% endif %}
             </div>
@@ -51,10 +54,10 @@
             <div href="#" class="d-block mb-4 h-100">
                 <img width="100%" onmouseover="currentSlide({{ forloop.counter }})" onclick="currentSlide({{ forloop.counter }})" class="img-fluid demo cursor" src="{{ img.image.url }}" alt="l">
                 {% if forloop.counter == 3 %}
-                <div id="more-mobile">Show more</div>
+                <div id="more-mobile">{% trans "Show more" %}</div>
                 <script>
                     var moreImagesCount = "{{ product.get_images_count|safe }}" - 3;
-                    document.getElementById('more-mobile').innerHTML = "+" + moreImagesCount + " photo";
+                    document.getElementById('more-mobile').innerHTML = "+" + moreImagesCount + " {% trans "photo" %}";
                 </script>
                 {% endif %}
             </div>

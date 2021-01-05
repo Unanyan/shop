@@ -32,5 +32,22 @@ button.btn.btn-outline-success:hover, button.btn.btn-outline-success.my-2.my-sm-
     border-bottom: 3px solid #0ca6a1;
 }
 
+/*#language-switcher .bootstrap-select {
+    width: 120px;
+    margin-top: 10px;
+    margin-left: 8px;
+}
+
+#language-switcher .bootstrap-select button {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}*/
+
+select {
+    color: #0ca6a1;
+    width: auto;
+    border-color: #0ca6a1;
+}
+
 
 

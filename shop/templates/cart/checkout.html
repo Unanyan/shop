@@ -1,24 +1,27 @@
 {% extends 'base.html' %}{% load static %}
 {% block content %}
+{% load i18n %}
+{% get_current_language as language_code %}
+{% get_available_languages as languages %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/checkout.css' %}"/>
 
 <div id="sign-in">
     <div id="form">
         <div>
-            <h1>To order</h1>
-            <h6>Enter your details below</h6>
+            <h1>{% trans "To order" %}</h1>
+            <h6>{% trans "Enter your details below" %}</h6>
 
             <form action="{% url 'cart:checkout' %}" method="post">
                 {% csrf_token %}
                 <label for="name"></label><br>
-                <input type="text" id="name" name="name" placeholder=" Username"  minlength="3" maxlength="45" required><br>
+                <input type="text" id="name" name="name" placeholder=" {% trans "Username" %}"  minlength="3" maxlength="45" required><br>
                 <label for="email"></label><br>
-                <input type="email" id="email" name="email" placeholder=" Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required><br><br>
+                <input type="email" id="email" name="email" placeholder=" {% trans "Email" %}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required><br><br>
                 <label for="address"></label><br>
-                <input type="text" id="address" name="address" placeholder=" Address" maxlength="45" required><br><br>
+                <input type="text" id="address" name="address" placeholder=" {% trans "Address" %}" maxlength="45" required><br><br>
                 <label for="phone"></label><br>
-                <input type="tel" id="phone" name="phone" placeholder=" Phone" pattern="[0-9]{9}" required><br><br>
+                <input type="tel" id="phone" name="phone" placeholder=" {% trans "Phone" %}" pattern="[0-9]{9}" required><br><br>
                 <div class="row">
                     <div class="col">
                     </div>
@@ -27,8 +30,8 @@
                     </div>
                 </div>
             </form>
-            <h6 id="register-link">Do you want go to cart?
-                <span><a href="{% url 'cart:cart_detail' %}">Go to cart</a></span>
+            <h6 id="register-link">{% trans "Do you want go to cart?" %}
+                <span><a href="{% url 'cart:cart_detail' %}">{% trans "Go to cart" %}</a></span>
             </h6>
         </div>
     </div>

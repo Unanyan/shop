@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -225,7 +226,9 @@ LANGUAGES = (
     ('hy', _('Հայ')),
     ('en', _('ENG')),
 )
+
 PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
+
 LOCALE_PATHS = (
     os.path.join(PROJECT_PATH, '../locale'),
 )

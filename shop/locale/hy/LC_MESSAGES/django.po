@@ -1,0 +1,195 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-05 18:34+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: shop/settings.py:226
+msgid "Հայ"
+msgstr ""
+
+#: shop/settings.py:227
+msgid "ENG"
+msgstr "ԱՆԳԼ"
+
+#: templates/cart/checkout.html:12
+msgid "To order"
+msgstr "Պատվիրել"
+
+#: templates/cart/checkout.html:13
+msgid "Enter your details below"
+msgstr "Մուտքագրեք Ձեր տվյալներն այստեղ"
+
+#: templates/cart/checkout.html:18
+msgid "Username"
+msgstr "Անուն Ազգանուն"
+
+#: templates/cart/checkout.html:20
+msgid "Email"
+msgstr "Էլ․ հասցե"
+
+#: templates/cart/checkout.html:22
+msgid "Address"
+msgstr "Հասցե"
+
+#: templates/cart/checkout.html:24
+msgid "Phone"
+msgstr "Բջջ․ հեռախոսահամար"
+
+#: templates/cart/checkout.html:33
+msgid "Do you want go to cart?"
+msgstr "Վերադառնալ զամբյուղ"
+
+#: templates/cart/checkout.html:34
+msgid "Go to cart"
+msgstr "Զամբյուղ"
+
+#: templates/cart/detail.html:11
+msgid "Image"
+msgstr "Նկար"
+
+#: templates/cart/detail.html:12
+msgid "Name"
+msgstr "Անուն"
+
+#: templates/cart/detail.html:13
+msgid "Update"
+msgstr "Փոփոխել"
+
+#: templates/cart/detail.html:15
+msgid "Quantity"
+msgstr "Քանակ"
+
+#: templates/cart/detail.html:16
+msgid "Price"
+msgstr "Արժեք"
+
+#: templates/cart/detail.html:17
+msgid "Total"
+msgstr "Ընդհանուր"
+
+#: templates/cart/detail.html:39
+msgid "Delete"
+msgstr "Չեղարկել"
+
+#: templates/cart/detail.html:49
+msgid "Total amount"
+msgstr "Ընդհանուր գումար"
+
+#: templates/cart/detail.html:56
+msgid "To the store"
+msgstr "Խանութ"
+
+#: templates/cart/detail.html:57
+msgid "Checkout"
+msgstr "Պատվիրել"
+
+#: templates/components/cart.html:37
+msgid "ADD TO CART"
+msgstr "Ավելացնել զամբյուղ"
+
+#: templates/components/cart.html:40
+msgid "Buy"
+msgstr ""
+
+#: templates/components/footer.html:9
+msgid "Subscribe To Newsletter"
+msgstr "Բաժանորդագրվել նորություններին"
+
+#: templates/components/footer.html:10
+msgid "Please enter your email address and get updates"
+msgstr "Էլ․ հասցե"
+
+#: templates/components/footer.html:16
+msgid "Send"
+msgstr "Ուղարկել"
+
+#: templates/components/footer.html:25
+msgid "Contact information"
+msgstr "Կոնտակտային ինֆորմացիա"
+
+#: templates/components/footer.html:37
+msgid "Useful links"
+msgstr "Օգտակար հղումներ"
+
+#: templates/components/footer.html:38
+msgid "Terms and Conditions"
+msgstr ""
+
+#: templates/components/footer.html:39
+msgid "Contact Us"
+msgstr "Կապ մեզ հետ"
+
+#: templates/components/footer.html:40
+msgid "FAQ"
+msgstr "ՖԱՔ"
+
+#: templates/components/footer.html:41
+msgid "Privacy and Policy"
+msgstr "Քաղաքականություն"
+
+#: templates/components/footer.html:51
+msgid "© 2020 Present, inc. All rights reserved"
+msgstr "© 2020 Present, inc. All rights reserved"
+
+#: templates/components/header.html:22
+msgid "Home"
+msgstr "Գլխավոր"
+
+#: templates/components/header.html:26
+msgid "For him"
+msgstr "Տղամարդկանց"
+
+#: templates/components/header.html:29
+msgid "For her"
+msgstr "Կանացի"
+
+#: templates/components/header.html:32
+msgid "For child"
+msgstr "Երեխաների"
+
+#: templates/components/header.html:35
+msgid "About us"
+msgstr "Մեր մասին"
+
+#: templates/components/header.html:44
+msgid "items"
+msgstr "հատ"
+
+#: templates/components/header.html:48
+msgid "Is empty"
+msgstr "Դատարկ է"
+
+#: templates/product/detail.html:40 templates/product/detail.html:57
+msgid "Show more"
+msgstr "Տեսնել ավելին"
+
+#: templates/product/detail.html:43 templates/product/detail.html:60
+msgid "photo"
+msgstr "նկար"
+
+#: templates/product/index.html:18
+msgid "See more"
+msgstr "Տեսնել ավելին"
+
+#: templates/resources/about.html:15
+msgid "What we do"
+msgstr "Մեր նպատակնեը"
+
+#: templates/resources/about.html:19
+msgid "Our team"
+msgstr "Մեր թիմը"

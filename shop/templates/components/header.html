@@ -1,4 +1,7 @@
 {% load static %}
+{% load i18n %}
+{% get_current_language as language_code %}
+{% get_available_languages as languages %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}"/>
 
@@ -16,20 +19,20 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link {% if url_name == 'index' %}active{% endif %}" href="{% url 'product:index' %}">Home <span
+                    <a class="nav-link {% if url_name == 'index' %}active{% endif %}" href="{% url 'product:index' %}">{% trans "Home" %} <span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if url_name == 'men' %}active{% endif %}" href="{% url 'product:men' %}">Men</a>
+                    <a class="nav-link {% if url_name == 'men' %}active{% endif %}" href="{% url 'product:men' %}">{% trans "For him" %}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if url_name == 'women' %}active{% endif %}" href="{% url 'product:women' %}">Women</a>
+                    <a class="nav-link {% if url_name == 'women' %}active{% endif %}" href="{% url 'product:women' %}">{% trans "For her" %}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if url_name == 'child' %}active{% endif %}" href="{% url 'product:child' %}">Child</a>
+                    <a class="nav-link {% if url_name == 'child' %}active{% endif %}" href="{% url 'product:child' %}">{% trans "For child" %}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if url_name == 'about' %}active{% endif %}" href="{% url 'resources:about' %}">About us</a>
+                    <a class="nav-link {% if url_name == 'about' %}active{% endif %}" href="{% url 'resources:about' %}">{% trans "About us" %}</a>
                 </li>
 <!--                <li class="nav-item">-->
 
@@ -38,14 +41,41 @@
                     {% with total_items=cart|length %}
                     {% if cart|length > 0 %}
                     <a class="nav-link {% if url_name == 'cart_detail' %}active{% endif %}" href="{% url 'cart:cart_detail' %}">
-                        <img width="35px" height="35px" src="{% static 'images/cart5.webp' %}"> {{ total_items }} items ֏ {{ cart.get_total_price }}
+                        <img width="35px" height="35px" src="{% static 'images/cart5.webp' %}"> {{ total_items }} {% trans "items" %} ֏ {{ cart.get_total_price }}
                     </a>
                     {% else %}
                     <a class="nav-link {% if url_name == 'cart_detail' %}active{% endif %}" href="{% url 'cart:cart_detail' %}">
-                        <img width="35px" height="35px" src="{% static 'images/cart5.webp' %}"> Is empty
+                        <img width="35px" height="35px" src="{% static 'images/cart5.webp' %}"> {% trans "Is empty" %}
                     </a>
                     {% endif %}
                     {% endwith %}
+
+<!--                <li class="dropdown" id="language-switcher">-->
+        <form action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}" />
+
+            <select class="selectpicker" name="language" style="width: auto;" onchange="this.form.submit()">
+              {% get_current_language as LANGUAGE_CODE %}
+              {% get_available_languages as LANGUAGES %}
+              {% get_language_info_list for LANGUAGES as languages %}
+              {% for language in languages %}
+
+                  <option
+                    value="{{ language.code }}"
+                    {% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}
+                    data-content='<img src="/static/img/flags/{{ language.code }}.png">
+                    <span style="display:inline-block; width:100px; padding-left: 10px; text-shadow:none">
+                      {{ language.name_local }}
+                      <!-- span style="color:#999;">&nbsp;[{{ language.code }}]</span -->
+                    </span>'>
+                    {{ language.code }}
+                  </option>
+
+              {% endfor %}
+            </select>
+        </form>
+<!--    </li>-->
         </div>
     </nav>
     {% endwith %}

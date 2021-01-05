@@ -1,16 +1,20 @@
 {% extends 'base.html' %}{% load static %}
 {% block content %}
+{% load i18n %}
+{% get_current_language as language_code %}
+{% get_available_languages as languages %}
+
 <link rel="stylesheet" type="text/css" href="{% static 'css/cart_detail.css' %}"/>
 <table class="cart">
     <thead>
     <tr>
-        <th>Image</th>
-        <th class="name">Name</th>
-        <th>Update</th>
-        <th>Delete</th>
-        <th>Quantity</th>
-        <th>Price</th>
-        <th class="total">Total</th>
+        <th>{% trans "Image" %}</th>
+        <th class="name">{% trans "Name" %}</th>
+        <th>{% trans "Update" %}</th>
+        <th>{% trans "Delete" %}</th>
+        <th>{% trans "Quantity" %}</th>
+        <th>{% trans "Price" %}</th>
+        <th class="pr-total">{% trans "Total" %}</th>
     </tr>
     </thead>
     <tbody>
@@ -32,24 +36,24 @@
                     {% csrf_token %}
                 </form>
             </td>
-            <td><a href="{% url 'cart:cart_remove' product.id %}">Delete</a></td>
+            <td><a href="{% url 'cart:cart_remove' product.id %}">{% trans "Delete" %}</a></td>
             <td>
                 {{ item.quantity }}
             </td>
             <td class="num">֏ {{ item.price }}</td>
-            <td class="num total">֏ {{ item.total_price }}</td>
+            <td class="num pr-total">֏ {{ item.total_price }}</td>
         </tr>
         {% endwith %}
         {% endfor %}
         <tr class="total">
-            <td>Total amount</td>
-            <td colspan="4"></td>
+            <td>{% trans "Total amount" %}</td>
+            <td colspan="2"></td>
             <td class="num">֏ {{ cart.get_total_price }}</td>
         </tr>
     </tbody>
 </table>
 <p class="text-right">
-    <a href="{% url 'product:index' %}" class="button light">To the store</a>
-    <a href="{% url 'cart:checkout' %}" class="button">Checkout</a>
+    <a href="{% url 'product:index' %}" class="button light">{% trans "To the store" %}</a>
+    <a href="{% url 'cart:checkout' %}" class="button">{% trans "Checkout" %}</a>
 </p>
 {% endblock %}
