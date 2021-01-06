@@ -3,7 +3,8 @@ body {
 }
 
 .img-fluid {
-    height: 21rem;
+/*21rem*/
+    height: auto;
 }
 
 .card-columns .card {
@@ -32,6 +33,17 @@ a.btn.btn-primary:active {
 }
 
 @media(min-width: 426px) {
+.img-fluid {
+    height: auto;
+}
+.card-columns {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+}
+}
+
+@media(min-width: 769px) {
 .card-columns {
     -webkit-column-count: 4;
     -moz-column-count: 4;
@@ -43,8 +55,7 @@ a.btn.btn-primary:active {
 	border: 1px solid #0ca6a1;
 	font-size: 14px;
 	color: #0ca6a1;
-	padding: 7px 7px;
-	padding-right: 20px;
+	padding: 7px 20px 7px 20px;
 	margin-right: 7px;
 	border-radius: 4px;
 	cursor: pointer;
