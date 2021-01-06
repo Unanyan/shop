@@ -69,7 +69,7 @@ class Product(models.Model):
             return images_list[0].image.url
 
     def get_images(self):
-        images_list = self.images.filter(default=False)
+        images_list = self.images.filter()#default=False)
         return images_list.all()
 
     def get_images_count(self):
