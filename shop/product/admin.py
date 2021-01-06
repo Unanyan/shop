@@ -12,7 +12,7 @@ class GalleryInline(admin.TabularInline):
 @admin.register(Product)
 class ProductAdmin(TranslationAdmin):
     list_display = (
-        'name', 'image_show', 'description', 'content', 'price', 'category', 'count', 'is_slider_item', 'type'
+        'name', 'image_show', 'description', 'price', 'category', 'count', 'is_slider_item', 'type'
     )
     list_filter = ('name', 'price', 'count', 'type', 'category')
     search_fields = ['name',]

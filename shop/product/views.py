@@ -25,6 +25,7 @@ def index(request):
     template = loader.get_template('product/index.html')
     contact = Contact.objects.all()
     context = {
+        'from_index': True,
         'contact': contact,
         'products': products,
         'categories': categories,
@@ -40,7 +41,12 @@ def index(request):
 
 
 def men(request):
-    products = Product.objects.filter(Q(type='M'))
+    categories = Category.objects.filter(Q(type='M'))
+    category_id = request.GET.get('category_id', None)
+    if category_id:
+        products = Product.objects.filter(Q(category_id=category_id))
+    else:
+        products = Product.objects.filter(Q(type='M'))
     # print(products)
     # return HttpResponse(products)
 
@@ -50,13 +56,26 @@ def men(request):
     context = {
         'contact': contact,
         'products': products,
+        'categories': categories,
         # 'slider_items': slider_items,
     }
+
+    if request.is_ajax():
+        products_section = loader.render_to_string('product/index.html',
+                                                   {'products': products},
+                                                   request=request)
+        return JsonResponse({'products': products_section})
+
     return HttpResponse(template.render(context, request))
 
 
 def women(request):
-    products = Product.objects.filter(Q(type='W'))
+    categories = Category.objects.filter(Q(type='W'))
+    category_id = request.GET.get('category_id', None)
+    if category_id:
+        products = Product.objects.filter(Q(category_id=category_id))
+    else:
+        products = Product.objects.filter(Q(type='W'))
     # print(products)
     # return HttpResponse(products)
 
@@ -66,13 +85,26 @@ def women(request):
     context = {
         'contact': contact,
         'products': products,
+        'categories': categories,
         # 'slider_items': slider_items,
     }
+
+    if request.is_ajax():
+        products_section = loader.render_to_string('product/index.html',
+                                                   {'products': products},
+                                                   request=request)
+        return JsonResponse({'products': products_section})
+
     return HttpResponse(template.render(context, request))
 
 
 def child(request):
-    products = Product.objects.filter(Q(type='C'))
+    categories = Category.objects.filter(Q(type='C'))
+    category_id = request.GET.get('category_id', None)
+    if category_id:
+        products = Product.objects.filter(Q(category_id=category_id))
+    else:
+        products = Product.objects.filter(Q(type='C'))
     # print(products)
     # return HttpResponse(products)
 
@@ -80,10 +112,18 @@ def child(request):
     template = loader.get_template('product/index.html')
     contact = Contact.objects.all()
     context = {
+        'categories': categories,
         'contact': contact,
         'products': products,
         # 'slider_items': slider_items,
     }
+
+    if request.is_ajax():
+        products_section = loader.render_to_string('product/index.html',
+                                                   {'products': products},
+                                                   request=request)
+        return JsonResponse({'products': products_section})
+
     return HttpResponse(template.render(context, request))
 
 

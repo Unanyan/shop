@@ -5,7 +5,7 @@ from .models import Product, Category
 
 @register(Product)
 class ProductTranslationOptions(TranslationOptions):
-    fields = ('name', 'description')
+    fields = ('name', 'description', 'content')
     required_languages = ('en', 'hy')
 
 

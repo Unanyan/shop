@@ -12,7 +12,11 @@
                 <div class="d-flex ml-3 mt-4 mb-3 category-box flex-wrap">
                         <div id="category" class="category-item activ mt-2" value="">{% trans "#All" %}</div>
                     {% for category in categories %}
-                        <div id="category" class="category-item mt-2" value="{{category.pk}}">#{{ category.title }}</div>
+                        {% if from_index %}
+                        <div id="category" class="category-item mt-2" value="{{category.pk}}">{{ category.type }} #{{ category.title }}</div>
+                        {% else %}
+                         <div id="category" class="category-item mt-2" value="{{category.pk}}">#{{ category.title }}</div>
+                        {% endif %}
                     {% endfor %}
                 </div>
             {% endif %}

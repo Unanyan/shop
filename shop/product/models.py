@@ -9,14 +9,29 @@ from users.models import Subscriber
 
 
 class Category(models.Model):
+    MEN = 'M'
+    WOMEN = 'W'
+    CHILD = 'C'
+    TYPE_CHOICES = [
+        (MEN, 'Men'),
+        (WOMEN, 'Women'),
+        (CHILD, 'Child'),
+    ]
+
     title = models.CharField(max_length=16, default='mix')
+
+    type = models.CharField(
+        max_length=1,
+        choices=TYPE_CHOICES,
+        default=CHILD,
+    )
 
     class Meta:
         ordering = ['title']
         verbose_name_plural = "Categories"
 
     def __str__(self):
-        return self.title
+        return self.title + self.type
 
 
 class Product(models.Model):
