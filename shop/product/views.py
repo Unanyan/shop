@@ -1,5 +1,5 @@
 from django.db.models import Q
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import get_list_or_404, get_object_or_404
 from django.template import loader
 from product.models import Product
@@ -8,9 +8,16 @@ from resources.models import Contact
 
 from cart.forms import CartAddProductForm
 
+from .models import Category
+
 
 def index(request):
-    products = get_list_or_404(Product)
+    categories = Category.objects.all()
+    category_id = request.GET.get('category_id', None)
+    if category_id:
+        products = Product.objects.filter(Q(category_id=category_id))
+    else:
+        products = get_list_or_404(Product)
     # print(products)
     # return HttpResponse(products)
 
@@ -20,8 +27,15 @@ def index(request):
     context = {
         'contact': contact,
         'products': products,
+        'categories': categories,
         # 'slider_items': slider_items,
     }
+    if request.is_ajax():
+        products_section = loader.render_to_string('product/products.html',
+                                                   {'products': products},
+                                                   request=request)
+        return JsonResponse({'products': products_section})
+
     return HttpResponse(template.render(context, request))
 
 

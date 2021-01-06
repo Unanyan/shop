@@ -8,6 +8,17 @@ from django.urls import reverse
 from users.models import Subscriber
 
 
+class Category(models.Model):
+    title = models.CharField(max_length=16, default='mix')
+
+    class Meta:
+        ordering = ['title']
+        verbose_name_plural = "Categories"
+
+    def __str__(self):
+        return self.title
+
+
 class Product(models.Model):
     MEN = 'M'
     WOMEN = 'W'
@@ -24,6 +35,9 @@ class Product(models.Model):
     is_slider_item = models.BooleanField(default=False)
     price = models.IntegerField(default=0)
     count = models.IntegerField(default=0)
+    category = models.ForeignKey(
+        Category, related_name='products', on_delete=models.CASCADE,
+    )
     type = models.CharField(
         max_length=1,
         choices=TYPE_CHOICES,

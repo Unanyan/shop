@@ -1,0 +1,17 @@
+{% load static %}
+{% load i18n %}
+{% get_current_language as language_code %}
+{% get_available_languages as languages %}
+
+    {% for product in products %}
+    <div class="card h-200">
+        <a href="{% url 'product:detail' product.pk %}">
+            <img src="{{ product.get_default_image }}" class="card-img-top img-fluid" alt="...">
+        </a>
+        <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5><span id="price">֏ {{ product.price }}</span>
+            <p class="card-text">{{ product.description }}</p>
+            <a href="{% url 'product:detail' product.pk %}" class="btn btn-primary">{% trans "See more" %}</a>
+        </div>
+    </div>
+    {% endfor %}

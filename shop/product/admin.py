@@ -1,7 +1,7 @@
 from django.utils.safestring import mark_safe
 from modeltranslation.admin import TranslationAdmin, TranslationTabularInline
 from django.contrib import admin
-from .models import Product, Gallery
+from .models import Product, Gallery, Category
 
 
 class GalleryInline(admin.TabularInline):
@@ -12,9 +12,9 @@ class GalleryInline(admin.TabularInline):
 @admin.register(Product)
 class ProductAdmin(TranslationAdmin):
     list_display = (
-        'name', 'image_show', 'description', 'content', 'price', 'count', 'is_slider_item', 'type'
+        'name', 'image_show', 'description', 'content', 'price', 'category', 'count', 'is_slider_item', 'type'
     )
-    list_filter = ('name', 'price', 'count', 'type')
+    list_filter = ('name', 'price', 'count', 'type', 'category')
     search_fields = ['name',]
     inlines = [GalleryInline,]
 
@@ -26,3 +26,7 @@ class ProductAdmin(TranslationAdmin):
 
     image_show.__name__ = "default_image"
 
+@admin.register(Category)
+class CategoryAdmin(TranslationAdmin):
+    list_display = ('title',)
+    search_fields = ['title']

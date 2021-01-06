@@ -5,20 +5,19 @@
 {% get_available_languages as languages %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/product.css' %}"/>
-
-<div class="card-columns">
-    {% for product in products %}
-    <div class="card h-200">
-        <a href="{% url 'product:detail' product.pk %}">
-            <img src="{{ product.get_default_image }}" class="card-img-top img-fluid" alt="...">
-        </a>
-        <div class="card-body">
-            <h5 class="card-title">{{ product.name }}</h5><span id="price">֏ {{ product.price }}</span>
-            <p class="card-text">{{ product.description }}</p>
-            <a href="{% url 'product:detail' product.pk %}" class="btn btn-primary">{% trans "See more" %}</a>
-        </div>
-    </div>
-    {% endfor %}
+    <script>
+        var productListUrl = "{% url 'product:index' %}";
+    </script>
+            {% if categories %}
+                <div class="d-flex ml-3 mt-4 mb-3 category-box flex-wrap">
+                        <div id="category" class="category-item activ mt-2" value="">{% trans "#All" %}</div>
+                    {% for category in categories %}
+                        <div id="category" class="category-item mt-2" value="{{category.pk}}">#{{ category.title }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+<div id="card-columns" class="card-columns">
+    {% include 'product/products.html' with products=products %}
 </div>
-
+<script src="{% static 'js/products_list.js' %}"></script>
 {% endblock %}
