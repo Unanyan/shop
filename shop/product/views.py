@@ -17,7 +17,8 @@ def index(request):
     if category_id:
         products = Product.objects.filter(Q(category_id=category_id))
     else:
-        products = get_list_or_404(Product)
+        products = Product.objects.filter(Q(is_slider_item=True))[:30]
+        # products = get_list_or_404(Product)
     # print(products)
     # return HttpResponse(products)
 

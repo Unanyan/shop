@@ -10,6 +10,6 @@ class SubscriberAdmin(admin.ModelAdmin):
 
 
 @admin.register(Customer)
-class SubscriberAdmin(admin.ModelAdmin):
-    list_display = ('name', 'mail', 'address')
-    search_fields = ['mail']
+class CustomerAdmin(admin.ModelAdmin):
+    list_display = ('name', 'phone', 'address')
+    search_fields = ['phone', 'name']

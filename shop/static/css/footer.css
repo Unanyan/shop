@@ -209,7 +209,8 @@ input::-webkit-inner-spin-button {
 	text-align: center
 }
 
-#footer #email:after {
+#footer #email:focus {
+    outline: none;
 	border: 2px solid #0ca6a1;
 }
 

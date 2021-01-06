@@ -8,11 +8,16 @@
        <script>
            function plus() {
                let quantity = parseInt(document.getElementById("quantity").value) + 1;
-               document.getElementById("quantity").value = quantity;
+               if (quantity <= {{ product.count }}) {
+                   document.getElementById("quantity").value = quantity;
+               }
                console.log(quantity)
            }
            function minus() {
-               document.getElementById("quantity").value -= 1;
+               let quantity = parseInt(document.getElementById("quantity").value) - 1;
+               if (quantity > 0) {
+                   document.getElementById("quantity").value = quantity;
+               }
            }
        </script>
 
@@ -27,11 +32,16 @@
 
         {% csrf_token %}
         <div>
-                <div id="input">
-                    <input type="button" value="-" class="btn btn-primary btn-cust" onclick="minus()"/>
-                    {{ cart_product_form }}
-                    <input type="button" value="+" class="btn btn-primary btn-cust" onclick="plus()"/>
-                </div>
+            <div id="input">
+                <input type="button" value="-" class="btn btn-primary btn-cust" onclick="minus()"/>
+                <!--                    {{ cart_product_form }}-->
+                <input type="number" name="quantity" value="1" class="form-control" id="quantity"
+                       placeholder="1" onfocus="this.placeholder = ''" min="1" max="{{ product.count }}" required
+                       oninvalid="this.setCustomValidity('In the store {{ product.count }}items')"
+                       oninput="setCustomValidity('')">
+                <input type="hidden" name="update" id="id_update" value="False">
+                <input type="button" value="+" class="btn btn-primary btn-cust" onclick="plus()"/>
+            </div>
 <!--            <label for="count"></label>-->
 <!--            <input class="form-control" id="count" type="number" onfocus="this.placeholder = ''"placeholder="Quantity" name="count" max="100" min="1">-->
             <button class="btn btn-primary btn-custom" type="submit">{% trans "ADD TO CART" %}</button>

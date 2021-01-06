@@ -34,10 +34,11 @@ footer#footer {
     margin-top: 190rem;
 }
 
-#description p {
+#description div p {
     font-weight: 300;
     font-size: 16px;
     line-height: 20px;
+    color: #0ca6a1;
 }
 
 #description {
@@ -46,6 +47,7 @@ footer#footer {
     margin-left: 7%;
     margin-right: 30%;
 }
+
 
 @media only screen and (min-width: 426px) {
     div.card {
@@ -142,7 +144,7 @@ footer#footer {
     }
 
     .container#images {
-        width: 100%;
+        width: 97%;
         padding-right: 3.5% !important;
     }
 
@@ -193,7 +195,7 @@ h3.mobile, div.mobile, #card-mobile {
 }
 
 #description h1, #images h1 {
-    color: #0EACA8;
+    color: #0ca6a1;
     /*border-bottom: 0.5px solid #0ca6a1;*/
     font-family: Montserrat;
     font-style: normal;
@@ -201,14 +203,14 @@ h3.mobile, div.mobile, #card-mobile {
     font-size: 42px;
     line-height: 51px;
 }
-
+/*
 #description h2 {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 29px;
-}
+}*/
 
 #big-image .img-fluid {
     height: 350px;
@@ -224,7 +226,7 @@ h3.mobile, div.mobile, #card-mobile {
 
 #more, #more-mobile {
 position: absolute;
-    top: 50%;
+    top: 41%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: Montserrat;
@@ -258,7 +260,9 @@ footer#footer {
     box-sizing: border-box;
 }
 
-img {
+#images .mySlides img {
+    width: auto;
+    max-width: 100%;
     vertical-align: middle;
 }
 

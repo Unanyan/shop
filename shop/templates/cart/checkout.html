@@ -14,14 +14,12 @@
 
             <form action="{% url 'cart:checkout' %}" method="post">
                 {% csrf_token %}
-                <label for="name"></label><br>
-                <input type="text" id="name" name="name" placeholder=" {% trans "Username" %}"  minlength="3" maxlength="45" required><br>
-                <label for="email"></label><br>
-                <input type="email" id="email" name="email" placeholder=" {% trans "Email" %}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required><br><br>
-                <label for="address"></label><br>
-                <input type="text" id="address" name="address" placeholder=" {% trans "Address" %}" maxlength="45" required><br><br>
-                <label for="phone"></label><br>
-                <input type="tel" id="phone" name="phone" placeholder=" {% trans "Phone" %}" pattern="[0-9]{9}" required><br><br>
+                <label for="name"></label>
+                <input type="text" id="name" name="name" placeholder="{% trans "Username" %}"  minlength="3" maxlength="45" required><br>
+                <label for="email"></label>
+                <input type="text" id="address" name="address" placeholder="{% trans "Address" %}" maxlength="45" required><br>
+                <label for="phone"></label>
+                <input type="tel" id="phone" name="phone" placeholder="{% trans "Phone" %}" pattern="[0-9]{9}" required><br><br>
                 <div class="row">
                     <div class="col">
                     </div>

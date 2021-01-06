@@ -30,8 +30,13 @@
             <td class="name">{{ product.name }}</td>
             <td>
                 <form action="{% url 'cart:cart_add' product.id %}" method="post">
-                    {{ item.update_quantity_form.quantity }}
-                    {{ item.update_quantity_form.update }}
+                    <input type="number" name="quantity" value="{{ item.quantity }}" class="form-control" id="quantity"
+                           placeholder="0" onfocus="this.placeholder = ''" min="1" max="{{ product.count }}" requiredr
+                           oninvalid="this.setCustomValidity('In the store {{ product.count }}items')"
+                           oninput="setCustomValidity('')">
+                    <input type="hidden" name="update" id="id_update" value="True">
+<!--                    {{ item.update_quantity_form.quantity }}-->
+<!--                    {{ item.update_quantity_form.update }}-->
                     <input type="submit" value="Update">
                     {% csrf_token %}
                 </form>

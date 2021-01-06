@@ -69,12 +69,12 @@ def checkout(request):
     #         print("bad email, details: ", e)
     #         messages.success(request, 'Please input correct email!')
     if request.method == 'POST':
-        email = request.POST['email']
+        # email = request.POST['email']
         name = request.POST['name']
         address = request.POST['address']
         phone = request.POST['phone']
         customer = Customer()
-        customer.mail = email
+        # customer.mail = email
         customer.name = name
         customer.address = address
         customer.phone = phone
