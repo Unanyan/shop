@@ -11,11 +11,6 @@ a.link {
     color: #0ca6a1;
 }
 
-.line {
-	border: 1px solid rgba(255, 255, 255, 0.2);
-	margin-bottom: 20px;
-}
-
 .main {
 	height: 150px;
 }
@@ -105,7 +100,6 @@ a.link {
 
 #footer .title {
 	width: auto;
-	padding-right: 6%;
 	display: flex;
 	align-items: center;
 }
@@ -123,11 +117,6 @@ a.link {
 	content: "\003E";
 }
 
-.contuct {
-	padding: 0.5em;
-	padding-left: 0;
-}
-
 .icon {
 	width: 100px;
 	height: 100px;
@@ -136,7 +125,6 @@ a.link {
 @media only screen and (max-width: 768px) {
 	.mail {
 		height: 290px;
-		width: 90%;
 	}
 	.form {
 		width: 90%;
@@ -217,4 +205,10 @@ input::-webkit-inner-spin-button {
 #footer #email[type="email"]::placeholder {
 	color: #0ca6a1;
 	text-align: center;
+}
+
+#footer .container.mail {
+    width: 90%;
+    max-width: 95%;
+    margin-left: 5%;
 }

@@ -165,7 +165,7 @@ msgstr "Տղամարդկանց"
 
 #: templates/components/header.html:29
 msgid "For her"
-msgstr "Կանացի"
+msgstr "Կանանց"
 
 #: templates/components/header.html:32
 msgid "For child"
