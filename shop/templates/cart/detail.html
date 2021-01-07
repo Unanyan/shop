@@ -79,6 +79,8 @@
 </table>
 <p class="text-right">
     <a href="{% url 'product:index' %}" class="button light">{% trans "To the store" %}</a>
+    {% if cart %}
     <a href="{% url 'cart:checkout' %}" class="button">{% trans "Checkout" %}</a>
+    {% endif %}
 </p>
 {% endblock %}

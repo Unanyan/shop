@@ -16,10 +16,10 @@
                 {% csrf_token %}
                 <label for="name"></label>
                 <input type="text" id="name" name="name" placeholder="{% trans "Username" %}"  minlength="3" maxlength="45" required><br>
-                <label for="email"></label>
+                <label for="address"></label>
                 <input type="text" id="address" name="address" placeholder="{% trans "Address" %}" maxlength="45" required><br>
                 <label for="phone"></label>
-                <input type="tel" id="phone" name="phone" placeholder="{% trans "Phone" %}" pattern="[0-9]{9}" required><br><br>
+                <input type="tel" id="phone" name="phone" autocomplete="one-time-code" placeholder="{% trans "Phone" %}" pattern="[0-9]{9}" required><br><br>
                 <div class="row">
                     <div class="col">
                     </div>
