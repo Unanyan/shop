@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-05 21:05+0400\n"
+"POT-Creation-Date: 2021-01-07 19:00+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: shop/settings.py:226
+#: shop/settings.py:227
 msgid "Հայ"
 msgstr ""
 
-#: shop/settings.py:227
+#: shop/settings.py:228
 msgid "ENG"
 msgstr "ԱՆԳԼ"
 
@@ -39,72 +39,77 @@ msgid "Username"
 msgstr "Անուն Ազգանուն"
 
 #: templates/cart/checkout.html:20
-msgid "Email"
-msgstr "Էլ․ հասցե"
-
-#: templates/cart/checkout.html:22
 msgid "Address"
 msgstr "Հասցե"
 
-#: templates/cart/checkout.html:24
+#: templates/cart/checkout.html:22
 msgid "Phone"
 msgstr "Բջջ․ հեռախոսահամար"
 
-#: templates/cart/checkout.html:33
+#: templates/cart/checkout.html:31
 msgid "Do you want go to cart?"
 msgstr "Վերադառնալ զամբյուղ"
 
-#: templates/cart/checkout.html:34
+#: templates/cart/checkout.html:32
 msgid "Go to cart"
 msgstr "Զամբյուղ"
 
-#: templates/cart/detail.html:11
+#: templates/cart/detail.html:12
 msgid "Image"
 msgstr "Նկար"
 
-#: templates/cart/detail.html:12
+#: templates/cart/detail.html:13
 msgid "Name"
 msgstr "Անուն"
 
-#: templates/cart/detail.html:13
+#: templates/cart/detail.html:14
 msgid "Update"
 msgstr "Փոփոխել"
 
-#: templates/cart/detail.html:14 templates/cart/detail.html:39
+#: templates/cart/detail.html:15 templates/cart/detail.html:64
 msgid "Delete"
 msgstr "Չեղարկել"
 
-#: templates/cart/detail.html:15
+#: templates/cart/detail.html:16
 msgid "Quantity"
 msgstr "Քանակ"
 
-#: templates/cart/detail.html:16
+#: templates/cart/detail.html:17
 msgid "Price"
 msgstr "Արժեք"
 
-#: templates/cart/detail.html:17
+#: templates/cart/detail.html:18
 msgid "Total"
 msgstr "Ընդհանուր"
 
-#: templates/cart/detail.html:49
-msgid "Total amount"
-msgstr "Ընդհանուր գումար"
+#: templates/cart/detail.html:54 templates/components/cart.html:38
+msgid "Is available"
+msgstr "Խանութում առկա է ընդամենը"
 
-#: templates/cart/detail.html:56
+#: templates/cart/detail.html:54 templates/components/cart.html:38
+#: templates/components/header.html:42
+msgid "items"
+msgstr "հատ"
+
+#: templates/cart/detail.html:74
+msgid "Total amount"
+msgstr "Ընդհանուր գումար՝"
+
+#: templates/cart/detail.html:81
 msgid "To the store"
 msgstr "Խանութ"
 
-#: templates/cart/detail.html:57
+#: templates/cart/detail.html:82
 msgid "Checkout"
 msgstr "Պատվիրել"
 
-#: templates/components/cart.html:37
+#: templates/components/cart.html:45
 msgid "ADD TO CART"
 msgstr "Ավելացնել զամբյուղ"
 
-#: templates/components/cart.html:40
+#: templates/components/cart.html:48
 msgid "Buy"
-msgstr ""
+msgstr "Գնել"
 
 #: templates/components/footer.html:9
 msgid "Subscribe To Newsletter"
@@ -139,8 +144,8 @@ msgid "Contact Us"
 msgstr "Կապ մեզ հետ"
 
 #: templates/components/footer.html:40
-msgid "FAQ"
-msgstr "ՖԱՔ"
+msgid "About us"
+msgstr "Մեր մասին"
 
 #: templates/components/footer.html:41
 msgid "Privacy and Policy"
@@ -148,7 +153,7 @@ msgstr "Քաղաքականություն"
 
 #: templates/components/footer.html:51
 msgid "© 2020 Present, inc. All rights reserved"
-msgstr "© 2020 Present, inc. Բոլոր իրավունքները պաշտպանված են"
+msgstr ""
 
 #: templates/components/header.html:22
 msgid "Home"
@@ -166,17 +171,9 @@ msgstr "Կանացի"
 msgid "For child"
 msgstr "Երեխաների"
 
-#: templates/components/header.html:35
-msgid "About us"
-msgstr "Մեր մասին"
-
-#: templates/components/header.html:44
-msgid "items"
-msgstr "հատ"
-
-#: templates/components/header.html:48
-msgid "Is empty"
-msgstr "Դատարկ է"
+#: templates/components/header.html:46
+msgid "֏ 0"
+msgstr ""
 
 #: templates/product/detail.html:40 templates/product/detail.html:57
 msgid "Show more"
@@ -186,7 +183,11 @@ msgstr "Տեսնել ավելին"
 msgid "photo"
 msgstr "նկար"
 
-#: templates/product/index.html:18
+#: templates/product/index.html:14
+msgid "#All"
+msgstr ""
+
+#: templates/product/products.html:14
 msgid "See more"
 msgstr "Տեսնել ավելին"
 
@@ -197,3 +198,17 @@ msgstr "Մեր նպատակնեը"
 #: templates/resources/about.html:19
 msgid "Our team"
 msgstr "Մեր թիմը"
+
+#, fuzzy
+#~| msgid "To the store"
+#~ msgid "In the store"
+#~ msgstr "Խանութ"
+
+#~ msgid "Email"
+#~ msgstr "Էլ․ հասցե"
+
+#~ msgid "FAQ"
+#~ msgstr "ՖԱՔ"
+
+#~ msgid "Is empty"
+#~ msgstr "Դատարկ է"

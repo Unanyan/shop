@@ -38,8 +38,8 @@ table {
 table th, table td {
     text-align: center;
     font-size:14px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     margin-top: 0px;
 }
 
@@ -72,7 +72,7 @@ table.cart img {
 
 td input[type="submit"] {
     font-size:12px;
-    padding:4px 10px;
+    padding:4px 17px;
 }
 
 form p label, form p input {
@@ -141,10 +141,35 @@ form div.field {
         width: 100%;
         height: calc(1.1em + .75rem + 2px);
     }
+
+    input.btn.btn-primary.btn-cust {
+        width: 33%!important;
+        padding: 0.3rem!important;
+    }
 }
 
-input#quantity {
+input {
     color: #0ca6a1;
 	text-align: center;
 }
 
+#input .btn-cust {
+    text-align: center;
+    vertical-align: middle;
+    width: 13%;
+    border-radius: 4px;
+    margin: 0.3rem;
+    padding: 0.3rem;
+    background: linear-gradient(270deg, #00928A 0%, #0ca6a1 100%);
+    border:none;
+    font-size: 24px;
+    line-height: 19px;
+    color: #ffffff;
+    font-weight: 550;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+/*#total-amount {
+    background-color: #12d3d3;
+}*/

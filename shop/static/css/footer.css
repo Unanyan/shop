@@ -17,7 +17,7 @@ a.link {
 }
 
 .main {
-	height: 180px;
+	height: 150px;
 }
 
 .box {
@@ -129,11 +129,11 @@ a.link {
 }
 
 .icon {
-	width: 160px;
-	height: 160px;
+	width: 100px;
+	height: 100px;
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
 	.mail {
 		height: 290px;
 		width: 90%;
@@ -176,9 +176,9 @@ a.link {
 	}
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 425px) {
 	#footer {
-		height: 780px;
+		height: 650px;
 		margin-top: 260px;
 	}
 	.mail {

@@ -48,6 +48,8 @@ button.btn.btn-outline-success:hover, button.btn.btn-outline-success.my-2.my-sm-
 }*/
 
 select {
+    border-radius: 3px;
+    padding: 4px;
     color: #0ca6a1;
     width: auto;
     border-color: #0ca6a1;

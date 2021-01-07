@@ -5,7 +5,14 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}"/>
 
-       <script>
+<div class="card">
+    <div class="card-header">
+       <h5 class="card-title">{{ product.name}}</h5><span>֏ {{ product.price }}</span>
+    </div>
+    <div>
+        <p class="card-text">{{ product.description }}</p>
+    </div>
+    <script>
            function plus() {
                let quantity = parseInt(document.getElementById("quantity").value) + 1;
                if (quantity <= {{ product.count }}) {
@@ -20,16 +27,7 @@
                }
            }
        </script>
-
-<div class="card">
-    <div class="card-header">
-       <h5 class="card-title">{{ product.name}}</h5><span>֏ {{ product.price }}</span>
-    </div>
-    <div>
-        <p class="card-text">{{ product.description }}</p>
-    </div>
     <form action="{% url 'cart:cart_add' product_id=product.id %}" method="post">
-
         {% csrf_token %}
         <div>
             <div id="input">
@@ -37,7 +35,7 @@
                 <!--                    {{ cart_product_form }}-->
                 <input type="number" name="quantity" value="1" class="form-control" id="quantity"
                        placeholder="1" onfocus="this.placeholder = ''" min="1" max="{{ product.count }}" required
-                       oninvalid="this.setCustomValidity('In the store {{ product.count }} items')"
+                       oninvalid="this.setCustomValidity('{% trans 'Is available' %} {{ product.count }} {% trans 'items' %}')"
                        oninput="setCustomValidity('')">
                 <input type="hidden" name="update" id="id_update" value="False">
                 <input type="button" value="+" class="btn btn-primary btn-cust" onclick="plus()"/>
