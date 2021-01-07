@@ -54,7 +54,7 @@ footer#footer {
         width: 31%;
         position: fixed;
         left: 67%;
-        bottom: 23%;
+        top: 16%;
     }
 
     #big-image img.img-fluid {
@@ -164,14 +164,12 @@ footer#footer {
         display: none;
     }
 
-    .banner-text h1 {
-        font-family: Montserrat;
-        font-style: normal;
+    /*.banner-text h1 {
         font-weight: 600;
         font-size: 20px;
         line-height: 24px;
         margin-bottom: 25px;
-    }
+    }*/
 
     .col-4 .img-fluid {
         padding-left: 0;
@@ -197,16 +195,12 @@ h3.mobile, div.mobile, #card-mobile {
 #description h1, #images h1 {
     color: #0ca6a1;
     /*border-bottom: 0.5px solid #0ca6a1;*/
-    font-family: Montserrat;
-    font-style: normal;
     font-weight: 500;
     font-size: 42px;
     line-height: 51px;
 }
 /*
 #description h2 {
-    font-family: Montserrat;
-    font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 29px;
@@ -229,8 +223,6 @@ position: absolute;
     top: 41%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: Montserrat;
-    font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
@@ -359,13 +351,13 @@ footer#footer {
 }
 
 
-/* Add a transparency effect for thumnbail images */
+/* Transparency effect for small images */
 
-.demo {
-    opacity: 0.6;
+/*.demo {
+    opacity: 0.5;
 }
 
 .active,
 .demo:hover {
-    opacity: 1;
-}
+    opacity: 1.5;
+}*/

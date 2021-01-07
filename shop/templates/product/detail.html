@@ -36,7 +36,7 @@
         <div class="col-3">
             <div href="#" class="d-block mb-4 h-100">
                 <img width="100%" onmouseover="currentSlide({{ forloop.counter }})" onclick="currentSlide({{ forloop.counter }})" class="img-fluid demo cursor" src="{{ img.image.url }}" alt="l">
-                {% if forloop.counter == 4 %}
+                {% if forloop.counter == 4 and not product.get_images_count == 4 %}
                 <div id="more">{% trans "Show more" %}</div>
                 <script>
                     var moreImagesCount = "{{ product.get_images_count|safe }}" - 4;
@@ -53,7 +53,7 @@
         <div class="col-4">
             <div href="#" class="d-block mb-4 h-100">
                 <img width="100%" onmouseover="currentSlide({{ forloop.counter }})" onclick="currentSlide({{ forloop.counter }})" class="img-fluid demo cursor" src="{{ img.image.url }}" alt="l">
-                {% if forloop.counter == 3 %}
+                {% if forloop.counter == 3 and not product.get_images_count == 3 %}
                 <div id="more-mobile">{% trans "Show more" %}</div>
                 <script>
                     var moreImagesCount = "{{ product.get_images_count|safe }}" - 3;

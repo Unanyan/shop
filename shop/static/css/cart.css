@@ -68,7 +68,7 @@
 
 div.card p {
     margin: 1rem;
-    min-height: 10rem;
+    min-height: 4rem;
 }
 
 input::-webkit-outer-spin-button,
@@ -86,6 +86,7 @@ input[type="number"]::placeholder {
     width: 62%;
     border-radius: 4px;
     margin-bottom: 0.35rem;
+    margin-top: 0.5rem;
     text-align:center;
     display: inline-block;
 }

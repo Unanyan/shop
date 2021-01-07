@@ -15,9 +15,9 @@ def index(request):
     categories = Category.objects.all()
     category_id = request.GET.get('category_id', None)
     if category_id:
-        products = Product.objects.filter(Q(category_id=category_id))
+        products = Product.objects.filter(Q(category_id=category_id)).filter(Q(count__gt=0))
     else:
-        products = Product.objects.filter(Q(is_slider_item=True))[:30]
+        products = Product.objects.filter(Q(is_slider_item=True)).filter(Q(count__gt=0))[:30]
         # products = get_list_or_404(Product)
     # print(products)
     # return HttpResponse(products)
@@ -45,9 +45,9 @@ def men(request):
     categories = Category.objects.filter(Q(type='M'))
     category_id = request.GET.get('category_id', None)
     if category_id:
-        products = Product.objects.filter(Q(category_id=category_id))
+        products = Product.objects.filter(Q(category_id=category_id)).filter(Q(count__gt=0))
     else:
-        products = Product.objects.filter(Q(type='M'))
+        products = Product.objects.filter(Q(type='M')).filter(Q(count__gt=0))
     # print(products)
     # return HttpResponse(products)
 
@@ -74,9 +74,9 @@ def women(request):
     categories = Category.objects.filter(Q(type='W'))
     category_id = request.GET.get('category_id', None)
     if category_id:
-        products = Product.objects.filter(Q(category_id=category_id))
+        products = Product.objects.filter(Q(category_id=category_id)).filter(Q(count__gt=0))
     else:
-        products = Product.objects.filter(Q(type='W'))
+        products = Product.objects.filter(Q(type='W')).filter(Q(count__gt=0))
     # print(products)
     # return HttpResponse(products)
 
@@ -103,9 +103,9 @@ def child(request):
     categories = Category.objects.filter(Q(type='C'))
     category_id = request.GET.get('category_id', None)
     if category_id:
-        products = Product.objects.filter(Q(category_id=category_id))
+        products = Product.objects.filter(Q(category_id=category_id)).filter(Q(count__gt=0))
     else:
-        products = Product.objects.filter(Q(type='C'))
+        products = Product.objects.filter(Q(type='C')).filter(Q(count__gt=0))
     # print(products)
     # return HttpResponse(products)
 

@@ -12,6 +12,7 @@ from django.contrib import messages
 from users.models import Customer
 
 from .models import CartItem, Cart
+from django.utils.translation import ugettext as _
 
 
 @require_POST
@@ -48,33 +49,11 @@ def cart_detail(request):
 
 
 def checkout(request):
-    # email = request.POST['email']
-    # try:
-    #     if request.method == 'POST':
-            # if exist try exception
-    #         Subscriber.objects.get(mail=email)
-    #         print("Subscriber with this email exist: ", email)
-    #     messages.success(request, 'Thank you, you are already subscribed!')
-    #     return HttpResponseRedirect('/', {'email': email.__str__()})
-    # except Subscriber.DoesNotExist as i:
-    #     try:
-    #         validate_email(email)
-    #         sub = Subscriber()
-    #         sub.mail = email
-    #         sub.save()
-    #         print("Created subscriber with this email: ", email, i)
-    #         messages.success(request, 'Thank you, you are successfully subscribed!')
-    #         return HttpResponseRedirect('/')
-    #     except ValidationError as e:
-    #         print("bad email, details: ", e)
-    #         messages.success(request, 'Please input correct email!')
     if request.method == 'POST':
-        # email = request.POST['email']
         name = request.POST['name']
         address = request.POST['address']
         phone = request.POST['phone']
         customer = Customer()
-        # customer.mail = email
         customer.name = name
         customer.address = address
         customer.phone = phone
@@ -89,19 +68,22 @@ def checkout(request):
             from django.forms.models import model_to_dict
 
             item['product'] = model_to_dict(item['product'])
-            print('product: ', item['product'])
             cart_item.product = get_object_or_404(Product, id=item['product']['id'])
 
-            # cart_item.product = item['product']
+            print(',,,', item['quantity'], item['product']['count'])
+            print('request', request.__str__())
             cart_item.quantity = item['quantity']
             cart_item.save()
+            if item['quantity'] > item['product']['count']:
+                # messages.success(request, 'Quantity greater than we have!')
+                return HttpResponseRedirect('/')
             cart = Cart()
             cart.user = customer
             cart.cart_item = cart_item
             cart.save()
-        messages.success(request, 'Thank you, your order has been successfully accepted!')
+        messages.success(request, _('Your order has been successfully accepted!'))
         return HttpResponseRedirect('/')
     else:
-        messages.success(request, 'Please fill in all the fields!')
+        messages.success(request, _('Please fill in all the fields!'))
         contact = Contact.objects.all()
         return render(request, 'cart/checkout.html', {'contact': contact,})

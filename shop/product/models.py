@@ -18,7 +18,7 @@ class Category(models.Model):
         (CHILD, 'Child'),
     ]
 
-    title = models.CharField(max_length=16, default='mix')
+    title = models.CharField(max_length=25, default='mix')
 
     type = models.CharField(
         max_length=1,

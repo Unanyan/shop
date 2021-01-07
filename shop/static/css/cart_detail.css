@@ -137,13 +137,13 @@ form div.field {
     }
 
     .form-control {
-        display: block;
-        width: 100%;
+        display: inline-block;
+        width: 50%;
         height: calc(1.1em + .75rem + 2px);
     }
 
     input.btn.btn-primary.btn-cust {
-        width: 33%!important;
+        width: 20%!important;
         padding: 0.3rem!important;
     }
 }
@@ -158,12 +158,13 @@ input {
     vertical-align: middle;
     width: 13%;
     border-radius: 4px;
-    margin: 0.3rem;
+    /*margin: 0.3rem;*/
+    margin-bottom: 0.3rem;
     padding: 0.3rem;
     background: linear-gradient(270deg, #00928A 0%, #0ca6a1 100%);
     border:none;
     font-size: 24px;
-    line-height: 19px;
+    line-height: 23px;
     color: #ffffff;
     font-weight: 550;
     text-transform: uppercase;

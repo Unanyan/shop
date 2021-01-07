@@ -14,8 +14,6 @@
 
 #form h1 {
     padding-top: 10px;
-    font-family: Montserrat;
-    font-style: normal;
     font-weight: 500;
     font-size: 42px;
     line-height: 51px;
@@ -23,8 +21,6 @@
 }
 
 #form h6 {
-    font-family: Montserrat;
-    font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 20px;
@@ -43,8 +39,6 @@ input, input:focus {
 }
 
 #form a {
-    font-family: Montserrat;
-    font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;

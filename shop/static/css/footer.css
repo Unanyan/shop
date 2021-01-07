@@ -115,9 +115,6 @@ a.link {
 .icon {
 	float: left;
 	content: "\003E";
-}
-
-.icon {
 	width: 100px;
 	height: 100px;
 }
@@ -125,6 +122,7 @@ a.link {
 @media only screen and (max-width: 768px) {
 	.mail {
 		height: 290px;
+		/*width: 90%;*/
 	}
 	.form {
 		width: 90%;

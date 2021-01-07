@@ -11,11 +11,11 @@
     <tr>
         <th>{% trans "Image" %}</th>
         <th class="name">{% trans "Name" %}</th>
-        <th>{% trans "Update" %}</th>
-        <th>{% trans "Delete" %}</th>
         <th>{% trans "Quantity" %}</th>
+<!--        <th>{% trans "Quantity" %}</th>-->
         <th>{% trans "Price" %}</th>
         <th class="pr-total">{% trans "Total" %}</th>
+        <th>{% trans "Delete" %}</th>
     </tr>
     </thead>
     <tbody>
@@ -58,15 +58,15 @@
 <!--                    {{ item.update_quantity_form.update }}-->
                     <input type="button" value="+" class="btn btn-primary btn-cust" onclick="p{{ product.id }}()"/>
                     </div>
-                    <input type="submit" value="Update">
+                    <input type="submit" value="{% trans 'Confirm' %}">
                 </form>
             </td>
-            <td><a href="{% url 'cart:cart_remove' product.id %}">{% trans "Delete" %}</a></td>
-            <td>
-                {{ item.quantity }}
-            </td>
+<!--            <td>-->
+<!--                {{ item.quantity }}-->
+<!--            </td>-->
             <td class="num">֏ {{ item.price }}</td>
             <td class="num pr-total">֏ {{ item.total_price }}</td>
+            <td><a href="{% url 'cart:cart_remove' product.id %}">{% trans "Delete" %}</a></td>
         </tr>
         {% endwith %}
         {% endfor %}

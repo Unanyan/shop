@@ -1,7 +1,3 @@
-body {
-    background-image: url("/static/images/background.png");
-}
-
 .banner {
     position: relative;
     width: 100%;
@@ -38,8 +34,6 @@ body {
     position: relative;
     padding-left: 3%;
     padding-top: 2%;
-    font-family: Montserrat;
-    font-style: normal;
     font-weight: 500;
     font-size: 30px;
     line-height: 37px;
@@ -51,8 +45,6 @@ body {
     padding-left: 4%;
     padding-right: 4%;
     bottom: 7px;
-    font-family: Montserrat;
-    font-style: normal;
     font-weight: 300;
     font-size: 16px;
     line-height: 20px;

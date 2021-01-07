@@ -1,9 +1,4 @@
-body {
-    background-image: url("/static/images/background.png");
-}
-
 .img-fluid {
-/*21rem*/
     height: auto;
 }
 
