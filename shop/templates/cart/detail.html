@@ -32,6 +32,7 @@
             <td>
         <script>
            function p{{ product.id }}() {
+               document.getElementById("{{ product.id }}").setCustomValidity("")
                let quantity = parseInt(document.getElementById("{{ product.id }}").value) + 1;
                if (quantity <= {{ product.count }}) {
                    document.getElementById("{{ product.id }}").value = quantity;
@@ -39,6 +40,7 @@
                console.log(quantity)
            }
            function m{{ product.id }}() {
+               document.getElementById("{{ product.id }}").setCustomValidity("")
                let quantity = parseInt(document.getElementById("{{ product.id }}").value) - 1;
                if (quantity > 0) {
                    document.getElementById("{{ product.id }}").value = quantity;

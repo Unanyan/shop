@@ -14,6 +14,7 @@
     </div>
     <script>
            function mobilePlus() {
+               document.getElementById("quantity-mobile").setCustomValidity("")
                let quantity = parseInt(document.getElementById("quantity-mobile").value) + 1;
                if (quantity <= {{ product.count }}) {
                    document.getElementById("quantity-mobile").value = quantity;
@@ -23,6 +24,7 @@
            }
 
            function mobileMinus() {
+               document.getElementById("quantity-mobile").setCustomValidity("")
                let quantity = parseInt(document.getElementById("quantity-mobile").value) - 1;
                if (quantity > 0) {
                    document.getElementById("quantity-mobile").value = quantity;
