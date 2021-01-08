@@ -2,6 +2,7 @@ from django.core.mail import send_mail
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.template import loader
 
 from product.models import Product
 
@@ -48,14 +49,26 @@ def update_model(sender, instance, **kwargs):
         cart_item = instance.cart_item
         quantity = cart_item.quantity
         product = cart_item.product
+        product_link = 'http://127.0.0.1:8000/en/' + str(product.id)
         message = (user.name + '\n' + user.address + '\n' + user.phone + '\n\n' +
                    product.name + ': ' + str(quantity) + '\n' +
-                   'http://127.0.0.1:8000/en/' + str(product.id))
+                   product_link)
         subject, from_email = 'New order', 'presents.shop.vanadzor@gmail.com'
+        #
+        # print("Sending notification to admin")
+        #
+        # send_mail(subject, message, from_email, ['unanyanmeruzan@gmail.com'])
 
-        print("Sending notification to admin")
-
-        send_mail(subject, message, from_email, ['unanyanmeruzan@gmail.com'])
+        html_message = loader.render_to_string(
+            'mailing/admin.html',
+            {
+                'product_link': product_link,
+                'product': product,
+                'user': user,
+                'quantity': quantity,
+            }
+        )
+        send_mail(subject, message, from_email, ['unanyanmeruzan@gmail.com'], fail_silently=True, html_message=html_message)
 
         product.count -= quantity
         product.save()

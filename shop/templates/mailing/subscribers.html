@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New product</title>
+</head>
+<body>
+    <div style="color: #0ca6a1;">
+        <h1>We are have new product now!</h1><br>
+        <h3>The new product name is: {{ product.name }}</h3><br>
+<!--        <img width="20rem" height="auto" src="http://127.0.0.1:8000{{ product.get_default_image }}">-->
+        <a href="{{ product_link }}"><h2>{{ product_link }}</h2></a>
+    </div>
+</body>
+</html>

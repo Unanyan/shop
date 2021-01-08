@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Order</title>
+</head>
+<body>
+    <div style="color: #0ca6a1;">
+        <h1>Customer</h1>
+        <հ3>{{ user.name }}, {{ user.address }}, {{ user.phone }}</հ3>
+        <h1>Product</h1>
+        <հ3>{{ product.name }} : {{ quantity }}</հ3>
+        <a href="{{ product_link }}"><h2>{{ product_link }}</h2></a>
+    </div>
+</body>
+</html>

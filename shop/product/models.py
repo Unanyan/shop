@@ -3,6 +3,7 @@ from django.core.mail import send_mail
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.template import loader
 from django.urls import reverse
 
 from users.models import Subscriber
@@ -99,9 +100,18 @@ def send_email(sender, instance, **kwargs):
         message = ('We are created new product!\n\n  The new product name is: ' +
                    instance.name + ',\n  Description is: ' + instance.description + '.')
         subject, from_email = 'New Post', 'presents.shop.vanadzor@gmail.com'
+        product_link = 'http://127.0.0.1:8000/en/' + str(instance.id)
 
         print("Sending notifications this emails from subscribers: ")
 
         for subscriber in Subscriber.objects.all():
             print(subscriber.mail)
-            send_mail(subject, message, from_email, [subscriber.mail])
+            # send_mail(subject, message, from_email, [subscriber.mail])
+            html_message = loader.render_to_string(
+                'mailing/subscribers.html',
+                {
+                    'product_link': product_link,
+                    'product': instance,
+                }
+            )
+            send_mail(subject, message, from_email, [subscriber.mail], fail_silently=True, html_message=html_message)
