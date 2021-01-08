@@ -1,0 +1,51 @@
+{% load static %}
+{% load i18n %}
+{% get_current_language as language_code %}
+{% get_available_languages as languages %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}"/>
+
+<div class="card">
+    <div class="card-header">
+       <h5 class="card-title">{{ product.name}}</h5><span>֏ {{ product.price }}</span>
+    </div>
+    <div>
+        <p class="card-text">{{ product.description }}</p>
+    </div>
+    <script>
+           function mobilePlus() {
+               let quantity = parseInt(document.getElementById("quantity-mobile").value) + 1;
+               if (quantity <= {{ product.count }}) {
+                   document.getElementById("quantity-mobile").value = quantity;
+               }
+               console.log(quantity)
+               console.log(document.getElementById("quantity-mobile").value)
+           }
+
+           function mobileMinus() {
+               let quantity = parseInt(document.getElementById("quantity-mobile").value) - 1;
+               if (quantity > 0) {
+                   document.getElementById("quantity-mobile").value = quantity;
+               }
+           }
+       </script>
+    <form action="{% url 'cart:cart_add' product_id=product.id %}" method="post">
+        {% csrf_token %}
+        <div>
+            <div id="input">
+                <input type="button" value="-" class="btn btn-primary btn-cust" onclick="mobileMinus()"/>
+                <!--                    {{ cart_product_form }}-->
+                <input type="number" name="quantity" value="1" class="form-control" id="quantity-mobile"
+                       placeholder="0" onfocus="this.placeholder = ''" min="1" max="{{ product.count }}" required
+                       oninvalid="this.setCustomValidity('{% trans 'Is available' %} {{ product.count }} {% trans 'items' %}')"
+                       oninput="setCustomValidity('')">
+                <input type="hidden" name="update" id="id_update" value="False">
+                <input type="button" value="+" class="btn btn-primary btn-cust" onclick="mobilePlus()"/>
+            </div>
+<!--            <label for="count"></label>-->
+<!--            <input class="form-control" id="count" type="number" onfocus="this.placeholder = ''"placeholder="Quantity" name="count" max="100" min="1">-->
+            <button class="btn btn-primary btn-custom" type="submit">{% trans "ADD TO CART" %}</button>
+        </div>
+    </form>
+<!--    <a href="#" class="btn btn-primary btn-custom">{% trans "Buy" %}</a>-->
+</div>

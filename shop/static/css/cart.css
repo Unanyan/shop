@@ -81,7 +81,7 @@ input[type="number"]::placeholder {
     text-align: center;
 }
 
-.form-control#quantity {
+.form-control#quantity, .form-control#quantity-mobile {
     border-color: #0ca6a1;
     width: 62%;
     border-radius: 4px;
