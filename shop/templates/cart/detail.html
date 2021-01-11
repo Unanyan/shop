@@ -6,6 +6,24 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/cart_detail.css' %}"/>
 
+        <script>
+           function plus(id, count) {
+               document.getElementById(id).setCustomValidity("")
+               let quantity = parseInt(document.getElementById(id).value) + 1;
+               if (quantity <= count) {
+                   document.getElementById(id).value = quantity;
+               }
+               console.log(quantity)
+           }
+           function minus(id) {
+               document.getElementById(id).setCustomValidity("")
+               let quantity = parseInt(document.getElementById(id).value) - 1;
+               if (quantity > 0) {
+                   document.getElementById(id).value = quantity;
+               }
+           }
+       </script>
+
 <table class="cart">
     <thead>
     <tr>
@@ -21,6 +39,7 @@
     <tbody>
         {% for item in cart %}
         {% with product=item.product %}
+
         <tr>
             <td>
                 <a href="{{ product.get_absolute_url }}">
@@ -29,38 +48,22 @@
                 </a>
             </td>
             <td class="name">{{ product.name }}</td>
-            <td>
-        <script>
-           function p{{ product.id }}() {
-               document.getElementById("{{ product.id }}").setCustomValidity("")
-               let quantity = parseInt(document.getElementById("{{ product.id }}").value) + 1;
-               if (quantity <= {{ product.count }}) {
-                   document.getElementById("{{ product.id }}").value = quantity;
-               }
-               console.log(quantity)
-           }
-           function m{{ product.id }}() {
-               document.getElementById("{{ product.id }}").setCustomValidity("")
-               let quantity = parseInt(document.getElementById("{{ product.id }}").value) - 1;
-               if (quantity > 0) {
-                   document.getElementById("{{ product.id }}").value = quantity;
-               }
-           }
-       </script>
+            <td id="td{{ product.id }}">
+                <div id="err{{ product.id }}"></div>
                 <form action="{% url 'cart:cart_add' product.id %}" method="post">
                     {% csrf_token %}
                     <div id="input">
-                    <input type="button" value="-" class="btn btn-primary btn-cust" onclick="m{{ product.id }}()"/>
-                    <input type="number" name="quantity" value="{{ item.quantity }}" class="form-control" id="{{ product.id }}"
+                    <input type="button" value="-" class="btn btn-primary btn-cust" onclick="minus({{ product.id }})"/>
+                    <input type="number" name="quantity" value="{{ item.quantity }}" class="form-control inp" id="{{ product.id }}"
                            placeholder="0" onfocus="this.placeholder = ''" min="1" max="{{ product.count }}" required
                            oninvalid="this.setCustomValidity('{% trans 'Is available' %} {{ product.count }} {% trans 'items' %}')"
                            oninput="setCustomValidity('')">
                     <input type="hidden" name="update" id="id_update" value="True">
 <!--                    {{ item.update_quantity_form.quantity }}-->
 <!--                    {{ item.update_quantity_form.update }}-->
-                    <input type="button" value="+" class="btn btn-primary btn-cust" onclick="p{{ product.id }}()"/>
+                    <input type="button" value="+" class="btn btn-primary btn-cust" onclick="plus({{ product.id }}, {{ product.count }})"/>
                     </div>
-                    <input type="submit" value="{% trans 'Confirm' %}">
+                    <input id="bt{{ product.id }}" class="confirm" type="submit" value="{% trans 'Confirm' %}">
                 </form>
             </td>
 <!--            <td>-->
@@ -82,7 +85,48 @@
 <p class="text-right">
     <a href="{% url 'product:index' %}" class="button light">{% trans "To the store" %}</a>
     {% if cart %}
-    <a href="{% url 'cart:checkout' %}" class="button">{% trans "Checkout" %}</a>
+            <script>
+            //get product onclick confirm button
+            $(document).on("click", "#checkout", function (event) {
+              event.preventDefault();
+              const inputs = document.getElementsByClassName("inp");
+              let isValid = true;
+
+              for (let i = 0; i < inputs.length; i++) {
+                  let id = inputs[i].id;
+                  let url = "{% url 'cart:cart_add' 123 %}".replace('123', id);
+                  $.ajax({
+                    type: "GET",
+                    url: url,
+                    async: false,
+                    data: {product_id: id},
+                    dataType: "json",
+                    success: function (response) {
+                        var input = document.getElementById(id);
+                        cnt = response["product"].count;
+                        console.log("cnt" + cnt);
+                        console.log("input.value " + input.value );
+                        if (input.value > cnt) {
+                            isValid = false;
+                            console.log("in for" + isValid);
+                            document.getElementById('err' + id).innerHTML="In the store " + cnt + "items";
+                            document.getElementById('err' + id).style.color = "red";
+                            input.style.color = "red";
+                        }
+                    },
+                    error: function (rs, e) {
+                      console.log(rs);
+                    },
+                  });
+              }
+              console.log(isValid);
+              if (isValid == true) {
+                document.location.replace("{% url 'cart:checkout' %}");
+              }
+            });
+            </script>
+<!--    href="{% url 'cart:checkout' %}"onclick="clic();" -->
+    <a id="checkout" class="button">{% trans "To order" %}</a>
     {% endif %}
 </p>
 {% endblock %}

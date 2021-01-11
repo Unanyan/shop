@@ -1,4 +1,6 @@
-from django.http import HttpResponse, HttpResponseRedirect
+from django.core.serializers import json
+from django.forms import model_to_dict
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.template import loader
 from django.views.decorators.http import require_POST
@@ -15,10 +17,14 @@ from .models import CartItem, Cart
 from django.utils.translation import ugettext as _
 
 
-@require_POST
+# @require_POST
 def cart_add(request, product_id):
     cart = CartSession(request)
     product = get_object_or_404(Product, id=product_id)
+
+    if request.is_ajax():
+        return JsonResponse({'product': model_to_dict(product)}, status=200, content_type="application/json")
+
     form = CartAddProductForm(request.POST)
     if form.is_valid():
         cd = form.cleaned_data
@@ -26,6 +32,7 @@ def cart_add(request, product_id):
         cart.add(product=product,
                  quantity=cd['quantity'],
                  update_quantity=cd['update'])
+
     return redirect('cart:cart_detail')
 
 

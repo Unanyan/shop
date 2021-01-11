@@ -47,7 +47,7 @@ def men(request):
     if category_id:
         products = Product.objects.filter(Q(category_id=category_id)).filter(Q(count__gt=0))
     else:
-        products = Product.objects.filter(Q(type='M')).filter(Q(count__gt=0))
+        products = Product.objects.filter(Q(type='M')).filter(Q(count__gt=0))[:30]
     # print(products)
     # return HttpResponse(products)
 
@@ -76,7 +76,7 @@ def women(request):
     if category_id:
         products = Product.objects.filter(Q(category_id=category_id)).filter(Q(count__gt=0))
     else:
-        products = Product.objects.filter(Q(type='W')).filter(Q(count__gt=0))
+        products = Product.objects.filter(Q(type='W')).filter(Q(count__gt=0))[:30]
     # print(products)
     # return HttpResponse(products)
 
@@ -105,7 +105,7 @@ def child(request):
     if category_id:
         products = Product.objects.filter(Q(category_id=category_id)).filter(Q(count__gt=0))
     else:
-        products = Product.objects.filter(Q(type='C')).filter(Q(count__gt=0))
+        products = Product.objects.filter(Q(type='C')).filter(Q(count__gt=0))[:30]
     # print(products)
     # return HttpResponse(products)
 

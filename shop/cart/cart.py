@@ -52,6 +52,9 @@ class Cart(object):
         if update_quantity:
             if product.count < quantity:
                 self.cart[product_id]['quantity'] = product.count
+            elif quantity == 0:
+                del self.cart[product_id]
+                print("removed: ", product.__str__())
             else:
                 self.cart[product_id]['quantity'] = quantity
         else:

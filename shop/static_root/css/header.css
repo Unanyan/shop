@@ -1,0 +1,30 @@
+@font-face {
+    font-family: IcoFont;
+    src: url('fontes/icoFont.woff');
+}
+
+.nav-item .active {
+   border-bottom: 2px solid #0EACA8;
+}
+
+.dropdown-menu {
+    left: -120%;
+    border-top: 3px solid #0EACA8;
+}
+
+.dropdown-menu li a {
+    color: black;
+}
+
+.dropdown .btn:focus {
+    box-shadow: 0 0 0 0;
+}
+
+.dropdown-menu li {
+    text-align: center;
+}
+
+.dropdown-menu li a:hover {
+    text-decoration: none;
+    border-bottom: 2px solid #0EACA8;
+}
