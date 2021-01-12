@@ -12,25 +12,8 @@
     <div>
         <p class="card-text">{{ product.description }}</p>
     </div>
-    <script>
-           function plus() {
-               document.getElementById("quantity").setCustomValidity("")
-               let quantity = parseInt(document.getElementById("quantity").value) + 1;
-               if (quantity <= {{ product.count }}) {
-                   document.getElementById("quantity").value = quantity;
-               }
-               console.log(quantity)
-               console.log(document.getElementById("quantity").value)
-           }
-
-           function minus() {
-               document.getElementById("quantity").setCustomValidity("")
-               let quantity = parseInt(document.getElementById("quantity").value) - 1;
-               if (quantity > 0) {
-                   document.getElementById("quantity").value = quantity;
-               }
-           }
-       </script>
+    <script>let productCount = {{ product.count }};</script>
+    <script src="{% static 'js/card.js' %}"></script>
     <form action="{% url 'cart:cart_add' product_id=product.id %}" method="post">
         {% csrf_token %}
         <div>

@@ -5,24 +5,8 @@
 {% get_available_languages as languages %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/cart_detail.css' %}"/>
+<script src="{% static 'js/cart_detail.js' %}"></script>
 
-        <script>
-           function plus(id, count) {
-               document.getElementById(id).setCustomValidity("")
-               let quantity = parseInt(document.getElementById(id).value) + 1;
-               if (quantity <= count) {
-                   document.getElementById(id).value = quantity;
-               }
-               console.log(quantity)
-           }
-           function minus(id) {
-               document.getElementById(id).setCustomValidity("")
-               let quantity = parseInt(document.getElementById(id).value) - 1;
-               if (quantity > 0) {
-                   document.getElementById(id).value = quantity;
-               }
-           }
-       </script>
 
 <table class="cart">
     <thead>
@@ -109,7 +93,7 @@
                         if (input.value > cnt) {
                             isValid = false;
                             console.log("in for" + isValid);
-                            document.getElementById('err' + id).innerHTML="In the store " + cnt + "items";
+                            document.getElementById('err' + id).innerHTML="{% trans 'In the store' %} " + cnt + " " + "{% trans 'items' %}";
                             document.getElementById('err' + id).style.color = "red";
                             input.style.color = "red";
                         }

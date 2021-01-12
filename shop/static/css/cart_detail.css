@@ -4,6 +4,7 @@ a {
 }
 
 a:hover {
+    cursor: pointer;
     color: #0ca6a1;
 }
 
