@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-13 00:51+0400\n"
+"POT-Creation-Date: 2021-01-16 18:04+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,11 +26,11 @@ msgstr "Ձեր պատվերը հաջողությամբ ընդունվել է"
 msgid "Please fill in all the fields!"
 msgstr "Բոլոր դաշտերը պարտադիր է լրացնել"
 
-#: shop/settings.py:227
+#: shop/settings.py:229
 msgid "Հայ"
 msgstr ""
 
-#: shop/settings.py:228
+#: shop/settings.py:230
 msgid "ENG"
 msgstr "ԱՆԳԼ"
 
@@ -43,22 +43,26 @@ msgid "Enter your details below"
 msgstr "Մուտքագրեք Ձեր տվյալներն այստեղ"
 
 #: templates/cart/checkout.html:18
-msgid "Username"
+msgid " Full name"
 msgstr "Անուն Ազգանուն"
 
 #: templates/cart/checkout.html:20
-msgid "Address"
+msgid " Address"
 msgstr "Հասցե"
 
-#: templates/cart/checkout.html:22
-msgid "Phone"
-msgstr "Բջջ․ հեռախոսահամար"
+#: templates/cart/checkout.html:23
+msgid " Phone number"
+msgstr "Բջջային հեռ․"
 
-#: templates/cart/checkout.html:31
+#: templates/cart/checkout.html:24
+msgid "Required mobile number"
+msgstr "Պահանջվում է բջջային հեռախոսահամար"
+
+#: templates/cart/checkout.html:34
 msgid "Do you want go to cart?"
 msgstr "Վերադառնալ զամբյուղ"
 
-#: templates/cart/checkout.html:32
+#: templates/cart/checkout.html:35
 #, fuzzy
 #| msgid "Go to cart"
 msgid "To cart"
@@ -210,6 +214,12 @@ msgstr "Մեր նպատակնեը"
 #: templates/resources/about.html:19
 msgid "Our team"
 msgstr "Մեր թիմը"
+
+#~ msgid "Username"
+#~ msgstr "Անուն Ազգանուն"
+
+#~ msgid "Phone"
+#~ msgstr "Բջջ․ հեռախոսահամար"
 
 #~ msgid "Checkout"
 #~ msgstr "Պատվիրել"

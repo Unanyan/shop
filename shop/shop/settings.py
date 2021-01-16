@@ -83,8 +83,8 @@ DATABASES = {
         'NAME': 'shop',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        # 'HOST': '127.0.0.1',
-        'HOST': 'dbb',
+        'HOST': '127.0.0.1',
+        # 'HOST': 'dbb',
         'PORT': '5432',
     }
 }

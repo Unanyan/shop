@@ -15,11 +15,14 @@
             <form action="{% url 'cart:checkout' %}" method="post">
                 {% csrf_token %}
                 <label for="name"></label>
-                <input type="text" id="name" name="name" placeholder="{% trans "Username" %}"  minlength="3" maxlength="45" required><br>
+                <input type="text" id="name" name="name" placeholder="{% trans ' Full name' %}" minlength="3" maxlength="45" required><br>
                 <label for="address"></label>
-                <input type="text" id="address" name="address" placeholder="{% trans "Address" %}" maxlength="45" required><br>
+                <input type="text" id="address" name="address" placeholder="{% trans ' Address' %}" maxlength="45" required><br>
                 <label for="phone"></label>
-                <input type="tel" id="phone" name="phone" autocomplete="one-time-code" placeholder="{% trans "Phone" %}" pattern="[0-9]{9}" required><br><br>
+                <input type="tel" id="phone" name="phone" autocomplete="one-time-code"
+                        placeholder="{% trans ' Phone number' %}" pattern="[0]{1}[0-9]{8}" required
+                        oninvalid="this.setCustomValidity('{% trans 'Required mobile number' %}')"
+                        oninput="setCustomValidity('')"><br><br>
                 <div class="row">
                     <div class="col">
                     </div>
