@@ -1,0 +1,32 @@
+version: '2.0'
+
+services:
+  dbb:
+    image: "postgres:12-alpine"
+    restart: unless-stopped
+    ports:
+      - '5435:5432'
+    environment:
+      POSTGRES_DB: "shop"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_USER: "postgres"
+      PGPASSWORD: "postgres"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - django-static:/var/www/django/static
+      - media:/app/shop/media
+  web:
+    build: ./
+    ports:
+      - '8081:443'
+      - '5010:8000'
+    command: bash -c 'while !</dev/tcp/dbb/5432; do sleep 1; done; sh ./gunicorn.sh'
+    depends_on:
+      - dbb
+    restart: always
+
+volumes:
+  pgdata:
+  django-static:
+  static_volume:
+  media: {}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-08 02:02+0400\n"
+"POT-Creation-Date: 2021-01-13 00:51+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: cart/views.py:84
+#: cart/views.py:91
 msgid "Your order has been successfully accepted!"
 msgstr "Ձեր պատվերը հաջողությամբ ընդունվել է"
 
-#: cart/views.py:87
+#: cart/views.py:94
 msgid "Please fill in all the fields!"
-msgstr "Բոլոր դաշտերը պարտադիր են լրացնելու համար"
+msgstr "Բոլոր դաշտերը պարտադիր է լրացնել"
 
 #: shop/settings.py:227
 msgid "Հայ"
@@ -34,7 +34,7 @@ msgstr ""
 msgid "ENG"
 msgstr "ԱՆԳԼ"
 
-#: templates/cart/checkout.html:12
+#: templates/cart/checkout.html:12 templates/cart/detail.html:113
 msgid "To order"
 msgstr "Պատվիրել"
 
@@ -59,63 +59,67 @@ msgid "Do you want go to cart?"
 msgstr "Վերադառնալ զամբյուղ"
 
 #: templates/cart/checkout.html:32
-msgid "Go to cart"
+#, fuzzy
+#| msgid "Go to cart"
+msgid "To cart"
 msgstr "Զամբյուղ"
 
-#: templates/cart/detail.html:12
+#: templates/cart/detail.html:14
 msgid "Image"
 msgstr "Նկար"
 
-#: templates/cart/detail.html:13
+#: templates/cart/detail.html:15
 msgid "Name"
 msgstr "Անուն"
 
-#: templates/cart/detail.html:14 templates/cart/detail.html:15
+#: templates/cart/detail.html:16 templates/cart/detail.html:17
 msgid "Quantity"
 msgstr "Քանակ"
 
-#: templates/cart/detail.html:16
+#: templates/cart/detail.html:18
 msgid "Price"
 msgstr "Արժեք"
 
-#: templates/cart/detail.html:17
+#: templates/cart/detail.html:19
 msgid "Total"
 msgstr "Ընդհանուր"
 
-#: templates/cart/detail.html:18 templates/cart/detail.html:69
+#: templates/cart/detail.html:20 templates/cart/detail.html:58
 msgid "Delete"
 msgstr "Չեղարկել"
 
-#: templates/cart/detail.html:54 templates/components/cart.html:38
+#: templates/cart/detail.html:43 templates/components/cart.html:25
+#: templates/components/cart_mobile.html:42
 msgid "Is available"
-msgstr "Խանութում առկա է ընդամենը"
+msgstr "Խանութում առկա է"
 
-#: templates/cart/detail.html:54 templates/components/cart.html:38
+#: templates/cart/detail.html:43 templates/cart/detail.html:96
+#: templates/components/cart.html:25 templates/components/cart_mobile.html:42
 #: templates/components/header.html:42
 msgid "items"
 msgstr "հատ"
 
-#: templates/cart/detail.html:61
+#: templates/cart/detail.html:50
 msgid "Confirm"
 msgstr "Հաստատել"
 
-#: templates/cart/detail.html:74
+#: templates/cart/detail.html:63
 msgid "Total amount"
 msgstr "Ընդհանուր գումար՝"
 
-#: templates/cart/detail.html:81
+#: templates/cart/detail.html:70
 msgid "To the store"
 msgstr "Խանութ"
 
-#: templates/cart/detail.html:82
-msgid "Checkout"
-msgstr "Պատվիրել"
+#: templates/cart/detail.html:96
+msgid "In the store"
+msgstr "Խանութում առկա է"
 
-#: templates/components/cart.html:45
+#: templates/components/cart.html:32 templates/components/cart_mobile.html:49
 msgid "ADD TO CART"
 msgstr "Ավելացնել զամբյուղ"
 
-#: templates/components/cart.html:48
+#: templates/components/cart.html:35 templates/components/cart_mobile.html:52
 msgid "Buy"
 msgstr "Գնել"
 
@@ -125,7 +129,7 @@ msgstr "Բաժանորդագրվել նորություններին"
 
 #: templates/components/footer.html:10
 msgid "Please enter your email address and get updates"
-msgstr "Խնդրում ենք լրացնել էլ․ հասցեն բաժանորդագրվելու համար"
+msgstr "Խնդրում ենք լրացնել էլեկտրոնային հասցեն բաժանորդագրվելու համար"
 
 #: templates/components/footer.html:15
 msgid "name@example.com"
@@ -206,6 +210,9 @@ msgstr "Մեր նպատակնեը"
 #: templates/resources/about.html:19
 msgid "Our team"
 msgstr "Մեր թիմը"
+
+#~ msgid "Checkout"
+#~ msgstr "Պատվիրել"
 
 #~ msgid "Update"
 #~ msgstr "Փոփոխել"
