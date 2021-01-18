@@ -26,9 +26,17 @@ class Rule(models.Model):
         return self.title
 
 
-class Terms(models.Model):
+class ContactUs(models.Model):
     title = models.CharField(max_length=50)
     content = RichTextField(null=False)
 
     def __str__(self):
         return self.title
+#
+#
+# class Terms(models.Model):
+#     title = models.CharField(max_length=50)
+#     content = RichTextField(null=False)
+#
+#     def __str__(self):
+#         return self.title

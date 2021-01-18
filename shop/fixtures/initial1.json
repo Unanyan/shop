@@ -6249,22 +6249,7 @@
             "model":"contact"
         }
     },
-    {
-        "model":"contenttypes.contenttype",
-        "pk":14,
-        "fields":{
-            "app_label":"resources",
-            "model":"rule"
-        }
-    },
-    {
-        "model":"contenttypes.contenttype",
-        "pk":15,
-        "fields":{
-            "app_label":"resources",
-            "model":"terms"
-        }
-    },
+
     {
         "model":"contenttypes.contenttype",
         "pk":16,

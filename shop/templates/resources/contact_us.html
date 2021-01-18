@@ -5,16 +5,15 @@
 {% get_current_language as language_code %}
 {% get_available_languages as languages %}
 
-<link href="{% static 'css/terms.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/contact_us.css' %}" rel="stylesheet" type="text/css"/>
 
-{% for term in terms %}
+{% for contact in contact_us %}
 <div class="container rules">
-    <span class="title">{{ term.title }}</span>
+    <span class="title">{{ contact.title }}</span>
     <div class="content">
-        {{ term.content|safe }}
+        {{ contact.content|safe }}
     </div>
 </div>
 {% endfor %}
 
 {% endblock %}
-

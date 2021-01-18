@@ -6,6 +6,6 @@ app_name = 'resources'
 
 urlpatterns = [
     path('about/', views.about, name='about'),
-    path('privacy_and_policy/', views.privacy_and_policy, name='privacy'),
-    path('terms_and_conditions/', views.terms_and_conditions, name='terms'),
+    path('how_to_order/', views.how_to_order, name='how_to_order'),
+    path('contact_us/', views.contact_us, name='contact_us'),
 ]

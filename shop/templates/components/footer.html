@@ -35,10 +35,9 @@
         </div>
         <div class="box">
             <h4 class="box_title">{% trans "Useful links" %}</h4>
-            <a class="link" href="{% url "resources:terms" %}">{% trans "Terms and Conditions" %}</a>
-            <a class="link" href="">{% trans "Contact Us" %}</a>
+            <a class="link" href="{% url 'resources:contact_us' %}">{% trans "Contact Us" %}</a>
             <a class="link" href="{% url 'resources:about' %}">{% trans "About us" %}</a>
-            <a class="link" href="{% url "resources:privacy" %}">{% trans "Privacy and Policy" %}</a>
+            <a class="link" href="{% url 'resources:how_to_order' %}">{% trans "How to order" %}</a>
         </div>
          <div class="box logo_mobile">
             <img class="icon" src="{% static 'images/logo.png' %}" alt="icon">
